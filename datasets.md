@@ -9,7 +9,7 @@
     - [1.1.3 XD-Violence (ECCV 2020)](#113-xd-violencenot-only-look-but-also-listen-learning-multimodal-violence-detection-under-weak-supervisioneccv-2020)  
     - [1.1.4 TAD Weakly (TIP 2021)](#114-tad-weaklylocalizing-anomalies-from-weakly-labeled-videostip-2021)  
   - [1.2 Semi-supervised VAD](#12-semi-supervised-vad)  
-    - [1.2.1 & 1.2.2 Subway Entrance & Exit (TPAMI 2008)](#121--122-subway-entranceexitrobust-real-time-unusual-event-detection-using-multiple-fixed-location-monitorstpami-2008)  
+    - [1.2.1 & 1.2.2 Subway Entrance & Exit (TPAMI 2008)](#121--122-subway-entrance-exit-tpami-2008)  
     - [1.2.3 UMN (CVPR 2009)](#123-umnabnormal-crowd-behavior-detection-using-social-force-modelcvpr-2009)  
     - [1.2.4 & 1.2.5 UCSD Ped1 & Ped2 (CVPR 2010)](#124--125-ucsd-ped1--ped2anomaly-detection-in-crowded-scenescvpr-2010)  
     - [1.2.6 CUHK Avenue (ICCV 2013)](#126-cuhk-avenueabnormal-event-detection-at-150-fps-in-matlabiccv-2013)  
@@ -471,6 +471,7 @@ $$ TIoU=\frac{1}{M}\sum_{j=1} ^M \frac{Area_p \cap Area_g}{Area_p \cup Area_g} \
 where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anomaly clip are predicted as anomaly according to the probability score 𝑃𝑗, 𝐴𝑟𝑒𝑎_𝑝represents the area of predicted anomalous region, 𝐴𝑟𝑒𝑎𝑔 is the area of annotated region, and 𝑀 is the number of clips that anomaly occurs.
 
 </p>
+
 
 
 
