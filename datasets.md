@@ -29,7 +29,7 @@
   - [1.5 Video Anomaly Caption/Retrieval](#15-video-anomaly-captionretrieval)  
     - [1.5.1 UCA (CVPR 2024)](#151-ucatowards-surveillance-video-and-language-understanding-new-dataset-baselines-and-challengescvpr-2024)  
     - [1.5.2 VAD-Instruct50k (arXiv 2024)](#152-vad-instruct50kholmes-vad-towards-unbiased-and-explainable-video-anomaly-detection-via-multi-modal-llm)  
-    - [1.5.3 & 1.5.4 UCFCrimeAR & XDViolenceAR (TIP 2024)](#153154-ucfcrimear-xdviolenceartoward-video-anomaly-retrieval-from-video-anomaly-detection-new-benchmarks-and-modeltip-2024)  
+    - [1.5.3 & 1.5.4 UCFCrimeAR & XDViolenceAR (TIP 2024)](#153154-ucfcrimear-xdviolencear)  
     - [1.5.5 UCCD (TMM 2024)](#155-uccdhuman-centric-behavior-description-in-videos-new-benchmark-and-modeltmm-2024)  
 - [2. Performance Evaluation](#2-performance-evaluation)  
   - [2.1 AUC](#21-auc-areaunder-the-curvepapersframe-level-aucpixel-level-auc)  
@@ -471,6 +471,7 @@ $$ TIoU=\frac{1}{M}\sum_{j=1} ^M \frac{Area_p \cap Area_g}{Area_p \cup Area_g} \
 where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anomaly clip are predicted as anomaly according to the probability score 𝑃𝑗, 𝐴𝑟𝑒𝑎_𝑝represents the area of predicted anomalous region, 𝐴𝑟𝑒𝑎𝑔 is the area of annotated region, and 𝑀 is the number of clips that anomaly occurs.
 
 </p>
+
 
 
 
