@@ -29,7 +29,7 @@
   - [1.5 Video Anomaly Caption/Retrieval](#15-video-anomaly-captionretrieval)  
     - [1.5.1 UCA (CVPR 2024)](#151-ucatowards-surveillance-video-and-language-understanding-new-dataset-baselines-and-challengescvpr-2024)  
     - [1.5.2 VAD-Instruct50k (arXiv 2024)](#152-vad-instruct50kholmes-vad-towards-unbiased-and-explainable-video-anomaly-detection-via-multi-modal-llm)  
-    - [1.5.3 & 1.5.4 UCFCrimeAR & XDViolenceAR (TIP 2024)](#153--154-ucfcrimear--xdviolenceartoward-video-anomaly-retrieval-from-video-anomaly-detection-new-benchmarks-and-modeltip-2024)  
+    - [1.5.3 & 1.5.4 UCFCrimeAR & XDViolenceAR (TIP 2024)](#153154-ucfcrimear--xdviolenceartoward-video-anomaly-retrieval-from-video-anomaly-detectionnew-benchmarks-and-modeltip-2024)  
     - [1.5.5 UCCD (TMM 2024)](#155-uccdhuman-centric-behavior-description-in-videos-new-benchmark-and-modeltmm-2024)  
 - [2. Performance Evaluation](#2-performance-evaluation)  
   - [2.1 AUC](#21-auc-areaunder-the-curvepapersframe-level-aucpixel-level-auc)  
@@ -381,9 +381,9 @@ The dataset is a human-centric video surveillance captioning dataset. This datas
 AUC refers to the area under the Receiver Operating Characteristic (ROC) Curve. The ROC Curve is created by plotting the True Positive Rate (TPR) against the False Positive Rate (FPR) at various threshold settings.
 </p>
 
-$$ TPR=\frac{TP}{TP+FN} $$
+TPR=TPTP+FN TPR=\frac{TP}{TP+FN} 
 
-$$ FPR=\frac{FP}{FP+TN} $$
+FPR=FPFP+TN FPR=\frac{FP}{FP+TN} 
 
 <p align = "justify"> 
 Where: TP(True Positives) is the number of actual positive instances, i.e., the count of samples correctly predicted as positive.TN(True Negatives) is the number of actual negative instances, i.e., the count of samples correctly predicted as negative.FP(False Positives) is the number of false positive instances, i.e., the count of samples incorrectly predicted as positive.FN(False Negatives) is the number of false negative instances, i.e., the count of samples incorrectly predicted as negative.
@@ -471,6 +471,7 @@ $$ TIoU=\frac{1}{M}\sum_{j=1} ^M \frac{Area_p \cap Area_g}{Area_p \cup Area_g} \
 where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anomaly clip are predicted as anomaly according to the probability score 𝑃𝑗, 𝐴𝑟𝑒𝑎_𝑝represents the area of predicted anomalous region, 𝐴𝑟𝑒𝑎𝑔 is the area of annotated region, and 𝑀 is the number of clips that anomaly occurs.
 
 </p>
+
 
 
 
