@@ -18,7 +18,7 @@
     - [1.2.9 IITB-Corridor (WACV 2020)](#129-iitb-corridormulti-timescale-trajectory-prediction-for-abnormal-human-activity-detectionwacv-2020)  
     - [1.2.10 NWPU Campus (CVPR 2023)](#1210-nwpu-campusa-new-comprehensive-benchmark-for-semi-supervised-video-anomaly-detection-and-anticipationcvpr-2023)  
   - [1.3 Fully Supervised VAD](#13-fully-supervised-vad)  
-    - [1.3.1 & 1.3.2 Hockey Fight & Movies Fight (CAIP 2011)](#131132-hockey-fight-movies-fightviolence-detection-in-video-using-computer-vision-techniquescaip-2011-1)  
+    - [1.3.1 & 1.3.2 Hockey Fight & Movies Fight (CAIP 2011)](#131132-hockey-fight--movies-fightviolence-detection-in-video-using-computer-vision-techniquescaip-2011)  
     - [1.3.3 Violent-Flows (CVPRW 2012)](#133-violent-flowsviolent-flows-real-time-detection-of-violent-crowd-behaviorcvpr-workshops-2012)  
     - [1.3.4 VSD (MTA 2015)](#134-vsdvsd-a-public-dataset-for-the-detection-of-violent-scenes-in-movies-design-annotation-analysis-and-evaluationmta-2015)  
     - [1.3.5 CCTV-Fights (ICASSP 2019)](#135-cctv-fightsdetection-of-real-world-fights-in-surveillance-videosicassp-2019)  
@@ -471,6 +471,7 @@ $$ TIoU=\frac{1}{M}\sum_{j=1} ^M \frac{Area_p \cap Area_g}{Area_p \cup Area_g} \
 where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anomaly clip are predicted as anomaly according to the probability score 𝑃𝑗, 𝐴𝑟𝑒𝑎_𝑝represents the area of predicted anomalous region, 𝐴𝑟𝑒𝑎𝑔 is the area of annotated region, and 𝑀 is the number of clips that anomaly occurs.
 
 </p>
+
 
 
 
