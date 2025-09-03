@@ -1,3 +1,17 @@
+- [1. Dataset](#1-dataset)
+  - [1.1 Weakly supervised VAD](#11-weakly-supervised-vad)
+  - [1.2 Semi-supervised VAD](#12-semi-supervised-vad)
+  - [1.3 Fully Supervised VAD](#13-fully-supervised-vad)
+  - [1.4 Open-set Supervised VAD](#14-open-set-supervised-vad)
+  - [1.5 Video Anomaly Caption/Retrieval](#15-video-anomaly-captionretrieval)
+- [2. Performance Evaluation](#2-performance-evaluation)
+  - [2.1 AUC](#21-auc-area-under-the-curvepaperframe-level-aucpixel-level-auc)
+  - [2.2 AP / mAP](#22-ap-average-precisionpapermap)
+  - [2.3 RBDC / TBDC](#23-rbdc-region-based-detection-criterion-and-tbdc-track-based-detection-criterionpaper)
+  - [2.4 EER / EDR](#24-eer-equal-error-rate-and-edr-equal-detected-ratepaper)
+  - [2.5 Accuracy](#25-accuracypaper)
+  - [2.6 TIoU](#26tioutemporal-intersection-over-unionpaper)
+    
 # 1. Dataset
 
 |       **Number**        | **Year** |                         **Dataset**                          | **Videos** |  Videos  | Videos | Videos |  Videos  | **Frames** |  Frames   | Frames  |  Frames   |  Frames  | **Hours** |
@@ -426,4 +440,5 @@ $$ TIoU=\frac{1}{M}\sum_{j=1} ^M \frac{Area_p \cap Area_g}{Area_p \cup Area_g} \
 
 <p align = "justify"> 
 where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anomaly clip are predicted as anomaly according to the probability score 𝑃𝑗, 𝐴𝑟𝑒𝑎_𝑝represents the area of predicted anomalous region, 𝐴𝑟𝑒𝑎𝑔 is the area of annotated region, and 𝑀 is the number of clips that anomaly occurs.
+
 </p>
