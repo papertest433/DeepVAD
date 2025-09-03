@@ -29,7 +29,7 @@
   - [1.5 Video Anomaly Caption/Retrieval](#15-video-anomaly-captionretrieval)  
     - [1.5.1 UCA (CVPR 2024)](#151-ucatowards-surveillance-video-and-language-understanding-new-dataset-baselines-and-challengescvpr-2024)  
     - [1.5.2 VAD-Instruct50k (arXiv 2024)](#152-vad-instruct50kholmes-vad-towards-unbiased-and-explainable-video-anomaly-detection-via-multi-modal-llm)  
-    - [1.5.3 & 1.5.4 UCFCrimeAR & XDViolenceAR (TIP 2024)](#153154-ucfcrimear-xdviolencear-toward-video-anomaly-retrieval-from-video-anomaly-detection-new-benchmarks-and-modeltip-2024)  
+    - [1.5.3 & 1.5.4 UCFCrimeAR & XDViolenceAR (TIP 2024)](#ucfcrimear-xdviolencear)  
     - [1.5.5 UCCD (TMM 2024)](#155-uccdhuman-centric-behavior-description-in-videos-new-benchmark-and-modeltmm-2024)  
 - [2. Performance Evaluation](#2-performance-evaluation)  
   - [2.1 AUC](#21-auc-areaunder-the-curvepapersframe-level-aucpixel-level-auc)  
@@ -347,6 +347,7 @@ The UCA (UCF-Crime Annotation) dataset is a pioneering multimodal surveillance v
 The dataset is a large-scale multimodal video anomaly detection benchmark.The dataset aims to provide precise temporal supervision and rich multimodal instructions to enable accurate anomaly localization and comprehensive explanations in video anomaly detection.VAD-Instruct50k is created using a semi-automatic labeling paradigm. This method involves efficient single-frame annotations applied to untrimmed videos, which are then synthesized into high-quality analyses of both abnormal and normal video clips.The videos for the dataset are primarily gathered from open-source datasets, including a large number of untrimmed videos with video-level anomaly labels.The collected videos are enhanced by generating reliable video event clips around the single-frame annotated frames and providing textual descriptions through human effort or foundation models. The dataset includes single-frame temporal annotations and explanatory text descriptions for both untrimmed videos and trimmed abnormal/normal video clips.
 </p>
 
+<a id="ucfcrimear-xdviolencear"></a>
 ### 1.5.3&1.5.4 UCFCrimeAR & XDViolenceAR:Toward Video Anomaly Retrieval From Video Anomaly Detection: New Benchmarks and Model(TIP 2024)
 
 [[Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10471334)][[Homepage](https://github.com/Roc-Ng/VAR?tab=readme-ov-file)]
@@ -471,6 +472,7 @@ $$ TIoU=\frac{1}{M}\sum_{j=1} ^M \frac{Area_p \cap Area_g}{Area_p \cup Area_g} \
 where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anomaly clip are predicted as anomaly according to the probability score 𝑃𝑗, 𝐴𝑟𝑒𝑎_𝑝represents the area of predicted anomalous region, 𝐴𝑟𝑒𝑎𝑔 is the area of annotated region, and 𝑀 is the number of clips that anomaly occurs.
 
 </p>
+
 
 
 
