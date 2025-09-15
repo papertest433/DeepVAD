@@ -436,7 +436,9 @@ EER provides a point of balance, while EDR emphasizes the completeness of detect
 Accuracy is a performance measurement for classification models or diagnostic tests that reflects the ratio of the number of correct predictions to the total number of predictions. It is one of the most intuitive performance metrics, especially in binary or multi-class classification problems.Accuracy is typically calculated using the following formula:  
 </p>
 
-Accuracy=TP+TNTP+TN+FP+FN Accuracy=\frac{TP+TN}{TP+TN+FP+FN}  
+$$
+Accuracy=\frac{TP+TN}{TP+TN+FP+FN}  
+$$
 
 <p align = "justify"> 
 Where: TP(True Positives) is the number of actual positive instances, i.e., the count of samples correctly predicted as positive.TN(True Negatives) is the number of actual negative instances, i.e., the count of samples correctly predicted as negative.FP(False Positives) is the number of false positive instances, i.e., the count of samples incorrectly predicted as positive.FN(False Negatives) is the number of false negative instances, i.e., the count of samples incorrectly predicted as negative.
@@ -468,13 +470,17 @@ where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anom
 The RBDR evaluates the model's ability to accurately localize the spatial extent of anomalies within video frames. It is particularly useful for assessing how well a model can identify the regions where anomalies occur.This metric compares the detected anomaly regions with the ground truth annotations to compute a score. The comparison is often done using the Intersection over Union (IoU), which measures the overlap between the predicted region and the actual region of the anomaly.A higher RBDR score indicates better spatial localization performance, meaning the model is more accurate in identifying the correct area of the video frame where the anomaly happens.
 </p>
 
-RBDR=num. of anomalous regions detectedtotal num. of anomalous regions RBDR = \frac{num.\ of\ anomalous\ regions\ detected} {total\ num.\ of\ anomalous\ regions} 
+$$
+RBDR = \frac{num.\ of\ anomalous\ regions\ detected} {total\ num.\ of\ anomalous\ regions} 
+$$
 
 <p align = "justify"> 
 The TBDR is focused on the model's capability to detect and track anomalies over time, providing a measure of how well the model can localize anomalies across consecutive video frames. This criterion is especially relevant for scenarios where anomalies have a temporal component, such as an object moving in an unusual way or an event unfolding over several frames. Similar to RBDC, TBDR also uses IoU to measure the overlap between the predicted anomaly track and the ground truth track. However, it considers the temporal continuity, ensuring that the model not only detects the anomaly in individual frames but also maintains the correct tracking of the anomaly across the video sequence.
 </p>
 
-TBDR=num. of anomalous tracks detectedtotal num. of anomalous tracks TBDR = \frac{num.\ of\ anomalous\ tracks\ detected} {total\ num.\ of\ anomalous\ tracks} 
+$$
+TBDR = \frac{num.\ of\ anomalous\ tracks\ detected} {total\ num.\ of\ anomalous\ tracks} 
+$$
 
 <p align = "justify"> 
 While AUC metrics provide an overall performance measure, RBDR and TBDR offer insights into the spatial and temporal accuracy of the model's anomaly localization capabilities.
@@ -678,6 +684,7 @@ Here, \(V'\) is a subset of video frames selected by thresholding the importance
 \]
 
 Frames with importance scores \(I(t) \geq \tau\) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
