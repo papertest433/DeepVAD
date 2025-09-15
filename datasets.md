@@ -501,9 +501,9 @@ BLEU is a metric for evaluating the quality of machine translation. It measures 
 #### a. Modified n-gram Precision
 For n-grams of order \(n\), the modified precision is calculated as:
 
-\[
+$$
 p_n = \frac{\sum_{C \in \text{Candidates}} \sum_{n\text{-gram} \in C} \text{Count}_{\text{clip}}(n\text{-gram})}{\sum_{C' \in \text{Candidates}} \sum_{n\text{-gram} \in C'} \text{Count}(n\text{-gram})}
-\]
+$$
 
  Here, \(\text{Count}_{\text{clip}}(n\text{-gram})\) is the clipped count, i.e., the maximum number of times an n-gram appears in any single reference translation.
  Typically, precisions are computed for 1-gram up to 4-gram.
@@ -684,6 +684,7 @@ Here, \(V'\) is a subset of video frames selected by thresholding the importance
 \]
 
 Frames with importance scores \(I(t) \geq \tau\) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
