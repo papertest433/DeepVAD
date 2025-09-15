@@ -519,8 +519,8 @@ e^{(1 - r/c)}, & \text{if } c \leq r
 \end{cases}
 $$
 
- \(c\) is the total length of the candidate translations.
-  \(r\) is the effective reference corpus length (best matching length).
+ $`c`$ is the total length of the candidate translations.
+ $`r`$ is the effective reference corpus length (best matching length).
 
 #### c. Final BLEU Score
 
@@ -530,7 +530,7 @@ $$
 \text{BLEU} = \text{BP} \cdot \exp\left( \sum_{n=1}^{N} w_n \log p_n \right)
 $$
 
- Usually, \(N=4\) and weights \(w_n = \frac{1}{4}\).
+ Usually, $`N=4`andweights\(wn=14\)‘ and weights $`w_n = \frac{1}{4}`$.
  This formula represents the geometric mean of the modified n-gram precisions multiplied by the brevity penalty.
 
 ### 2.3.2 CIDEr(Consensus-based Image Description Evaluation)[[Paper](https://openaccess.thecvf.com/content_cvpr_2015/papers/Vedantam_CIDEr_Consensus-Based_Image_2015_CVPR_paper.pdf)]
@@ -544,9 +544,9 @@ $$
 g_k(s_{ij}) = \frac{h_k(s_{ij})}{\sum_{\omega_l \in \Omega} h_l(s_{ij})} \cdot \log\left( \frac{|I|}{\sum_{p \in I} \min(1, \sum_q h_k(s_{pq}))} \right)
 $$
 
- \(h_k(s_{ij})\): frequency of n-gram \(\omega_k\) in sentence \(s_{ij}\) (Term Frequency)
- \(|I|\): total number of images
- Denominator: number of images containing n-gram \(\omega_k\) (Inverse Document Frequency)
+ $`h_k(s_{ij}): frequency of n-gram \omega_k in sentence s_{ij} (Term Frequency)`$
+ $`|I|`$: total number of images
+ Denominator: number of images containing n-gram $`\omega_k`$ (Inverse Document Frequency)
 
 
 
@@ -556,8 +556,8 @@ $$
 \text{CIDEr}_n(c_i, S_i) = \frac{1}{m} \sum_{j=1}^m \frac{\mathbf{g}_n(c_i) \cdot \mathbf{g}_n(s_{ij})}{\|\mathbf{g}_n(c_i)\| \cdot \|\mathbf{g}_n(s_{ij})\|}
 $$
 
- \(c_i\): candidate caption
- \(S_i = \{s_{i1}, ..., s_{im}\}\): set of reference captions
+ $`c_i`$: candidate caption
+ $`S_i = \{s_{i1}, ..., s_{im}\}`$: set of reference captions
  Computes the average cosine similarity between the TF-IDF vectors of the candidate and each reference caption
 
 
@@ -568,7 +568,7 @@ $$
 \text{CIDEr}(c_i, S_i) = \sum_{n=1}^N w_n \cdot \text{CIDEr}_n(c_i, S_i)
 $$
 
- Typically \(N=4\) with uniform weights \(w_n = \frac{1}{4}\)
+ Typically N=4 withuniformweightsN=4 with uniform weights $` w_n = \frac{1}{4} `$
 
 ### 2.3.3 METEOR(Metric for Evaluation of Translation with Explicit ORdering)[[Paper](https://aclanthology.org/W05-0909.pdf)]
 ### METEOR: An Automatic Metric for MT Evaluation
@@ -582,9 +582,9 @@ System and reference translations are aligned in stages: Exact match; Stemmed ma
 #### b. Precision & Recall Calculation
 
 Let:
- \( m \): number of mapped unigrams
- \( t \): total unigrams in system translation
- \( r \): total unigrams in reference translation
+ $`m`$ : number of mapped unigrams
+ $`t`$ : total unigrams in system translation
+ $`r`$ : total unigrams in reference translation
 
 $$
 P = \frac{m}{t}, \quad R = \frac{m}{r}
@@ -603,7 +603,7 @@ $$
 #### d. Fragmentation Penalty
 
 Let:
- \( \text{chunks} \): minimum number of contiguous matched segments
+ ‘chunks‘`\text{chunks}`: minimum number of contiguous matched segments
 
 $$
 \text{Penalty} = 0.5 \times \left( \frac{\text{chunks}}{m} \right)^3
@@ -684,6 +684,7 @@ $$
 $$
 
 Frames with importance scores \(I(t) \geq \tau\) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
