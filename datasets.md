@@ -376,7 +376,9 @@ The dataset is a human-centric video surveillance captioning dataset. This datas
 
 # 2. Performance Evaluation
 
-### 2.1 AUC (Area Under the Curve)[[Paper](https://openaccess.thecvf.com/content_cvpr_2018/papers/Sultani_Real-World_Anomaly_Detection_CVPR_2018_paper.pdf)][[Frame-level AUC](https://openaccess.thecvf.com/content_CVPR_2019/papers/Zhong_Graph_Convolutional_Label_Noise_Cleaner_Train_a_Plug-And-Play_Action_Classifier_CVPR_2019_paper.pdf)][[Pixel-level AUC](https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Lu_Abnormal_Event_Detection_2013_ICCV_paper.pdf)]
+## 2.1 frame-level metrics
+
+### 2.1.1 AUC (Area Under the Curve)[[Paper](https://openaccess.thecvf.com/content_cvpr_2018/papers/Sultani_Real-World_Anomaly_Detection_CVPR_2018_paper.pdf)][[Frame-level AUC](https://openaccess.thecvf.com/content_CVPR_2019/papers/Zhong_Graph_Convolutional_Label_Noise_Cleaner_Train_a_Plug-And-Play_Action_Classifier_CVPR_2019_paper.pdf)][[Pixel-level AUC](https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Lu_Abnormal_Event_Detection_2013_ICCV_paper.pdf)]
 
 <p align = "justify"> 
 AUC refers to the area under the Receiver Operating Characteristic (ROC) Curve. The ROC Curve is created by plotting the True Positive Rate (TPR) against the False Positive Rate (FPR) at various threshold settings.
@@ -400,7 +402,7 @@ Frame-level AUC pays special attention to the detection of the video frame level
 Pixel-level AUC is a more refined evaluation metric that evaluates the performance of the model at the pixel level. This means that the model should not only detect abnormal frames, but also be able to locate specific areas in the frame where the abnormality occurs. This evaluation method puts higher requirements on the spatial positioning ability of the model.
 </p>
 
-### 2.2 AP (Average Precision)[[Paper](https://link.springer.com/chapter/10.1007/978-3-030-58577-8_20)][[mAP](https://link.springer.com/article/10.1007/s11042-014-1984-4)]
+### 2.1.2 AP (Average Precision)[[Paper](https://link.springer.com/chapter/10.1007/978-3-030-58577-8_20)][[mAP](https://link.springer.com/article/10.1007/s11042-014-1984-4)]
 
 <p align = "justify"> 
 AP stands for the area under the Precision-Recall Curve. Precision is the proportion of positive identifications that were actually correct, while recall (or sensitivity) is the proportion of actual positive cases that were identified correctly. AP is particularly useful in situations where the number of positive samples (such as anomalies) is low, which is common in class-imbalanced datasets. Like AUC, a higher AP value indicates better performance, as it balances precision and recall.
@@ -410,25 +412,7 @@ AP stands for the area under the Precision-Recall Curve. Precision is the propor
 mAP is the mean of the Average Precision scores across different classes. In multi-class classification tasks, each class has its own Precision-Recall Curve, and mAP calculates the average of the AP for each class, providing an overall performance measure of the model across all classes.mAP is a widely used metric for multi-class detection tasks, especially in object detection. It provides a comprehensive measure of the model's ability to identify and localize objects across different categories.
 </p>
 
-### 2.3 RBDC (Region-based Detection Criterion) and TBDC (Track-based Detection Criterion)[[Paper](https://openaccess.thecvf.com/content_WACV_2020/papers/Ramachandra_Street_Scene_A_new_dataset_and_evaluation_protocol_for_video_WACV_2020_paper.pdf)]
-
-<p align = "justify"> 
-The RBDC evaluates the model's ability to accurately localize the spatial extent of anomalies within video frames. It is particularly useful for assessing how well a model can identify the regions where anomalies occur.This metric compares the detected anomaly regions with the ground truth annotations to compute a score. The comparison is often done using the Intersection over Union (IoU), which measures the overlap between the predicted region and the actual region of the anomaly.A higher RBDC score indicates better spatial localization performance, meaning the model is more accurate in identifying the correct area of the video frame where the anomaly happens.
-</p>
-
-$$ RBDC = \frac{num.\ of\ anomalous\ regions\ detected} {total\ num.\ of\ anomalous\ regions} $$
-
-<p align = "justify"> 
-The TBDC is focused on the model's capability to detect and track anomalies over time, providing a measure of how well the model can localize anomalies across consecutive video frames. This criterion is especially relevant for scenarios where anomalies have a temporal component, such as an object moving in an unusual way or an event unfolding over several frames. Similar to RBDC, TBDC also uses IoU to measure the overlap between the predicted anomaly track and the ground truth track. However, it considers the temporal continuity, ensuring that the model not only detects the anomaly in individual frames but also maintains the correct tracking of the anomaly across the video sequence.
-</p>
-
-$$ TBDC = \frac{num.\ of\ anomalous\ tracks\ detected} {total\ num.\ of\ anomalous\ tracks} $$
-
-<p align = "justify"> 
-While AUC metrics provide an overall performance measure, RBDC and TBDC offer insights into the spatial and temporal accuracy of the model's anomaly localization capabilities.
-</p>
-
-### 2.4 EER (Equal Error Rate) and EDR (Equal Detected Rate)[[Paper](https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Lu_Abnormal_Event_Detection_2013_ICCV_paper.pdf)]
+### 2.1.3 EER (Equal Error Rate) and EDR (Equal Detected Rate)[[Paper](https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Lu_Abnormal_Event_Detection_2013_ICCV_paper.pdf)]
 
 <p align = "justify"> 
 EER refers to the error rate where the false positive rate (FPR) and the false negative rate (FNR) are equal on the Receiver Operating Characteristic (ROC) curve.At this point, the detection system has an equal number of true positives (TP) and false negatives (FN), meaning the number of correctly detected anomalies is the same as the number of missed anomalies.EER is a crucial performance measure because it provides a balance point where the sensitivity and specificity of the detection system are equally weighted.
@@ -442,13 +426,13 @@ EDR typically refers to the proportion of total anomalies that are detected by t
 EER provides a point of balance, while EDR emphasizes the completeness of detection, especially in anomaly detection where a high recall rate is often more critical, as missing a true anomaly can have more severe consequences than falsely flagging a normal event as an anomaly.
 </p>
 
-### 2.5 Accuracy[[Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6239234)]
+### 2.1.4 Accuracy[[Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6239234)]
 
 <p align = "justify"> 
 Accuracy is a performance measurement for classification models or diagnostic tests that reflects the ratio of the number of correct predictions to the total number of predictions. It is one of the most intuitive performance metrics, especially in binary or multi-class classification problems.Accuracy is typically calculated using the following formula:  
 </p>
 
-$$ Accuracy=\frac{TP+TN}{TP+TN+FP+FN} $$ 
+Accuracy=TP+TNTP+TN+FP+FN Accuracy=\frac{TP+TN}{TP+TN+FP+FN}  
 
 <p align = "justify"> 
 Where: TP(True Positives) is the number of actual positive instances, i.e., the count of samples correctly predicted as positive.TN(True Negatives) is the number of actual negative instances, i.e., the count of samples correctly predicted as negative.FP(False Positives) is the number of false positive instances, i.e., the count of samples incorrectly predicted as positive.FN(False Negatives) is the number of false negative instances, i.e., the count of samples incorrectly predicted as negative.
@@ -460,7 +444,9 @@ Accuracy provides a straightforward metric to assess the overall performance of 
 Accuracy is often used for a quick assessment of model performance but is usually complemented by other metrics such as precision, recall, and the F1 score to fully evaluate model performance, especially with imbalanced datasets.When using accuracy as an evaluation metric, it is important to consider the distribution of the dataset. If the dataset has an uneven distribution of positive and negative samples, other metrics may need to be used in conjunction with accuracy to provide a more comprehensive assessment of the model's performance.
 </p>
 
-### 2.6TIoU(Temporal Intersection over Union)[[Paper](https://dl.acm.org/doi/pdf/10.1145/3343031.3350998)]
+## 2.2 pixel-level metrics
+
+### 2.2.1 TIoU(Temporal Intersection over Union)[[Paper](https://dl.acm.org/doi/pdf/10.1145/3343031.3350998)]
 
 <p align = "justify"> 
 TIoU is a video anomaly detection-specific metric that combines the temporal anomaly detection score with the model's ability to spatially locate the learned pattern of anomalies.TIoU evaluates the model's spatial localization accuracy by calculating the intersection over union (IoU) between the model's predicted anomaly region and the manually annotated region. This metric not only considers the model's ability to detect anomalies over time but also assesses the spatial accuracy of the model's anomaly localization.
@@ -470,8 +456,226 @@ $$ TIoU=\frac{1}{M}\sum_{j=1} ^M \frac{Area_p \cap Area_g}{Area_p \cup Area_g} \
 
 <p align = "justify"> 
 where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anomaly clip are predicted as anomaly according to the probability score 𝑃𝑗, 𝐴𝑟𝑒𝑎_𝑝represents the area of predicted anomalous region, 𝐴𝑟𝑒𝑎𝑔 is the area of annotated region, and 𝑀 is the number of clips that anomaly occurs.
-
 </p>
+
+### 2.2.2 RBDR (Region-based Detection Rate) and TBDR (Track-based Detection Rate)[[Paper](https://openaccess.thecvf.com/content_WACV_2020/papers/Ramachandra_Street_Scene_A_new_dataset_and_evaluation_protocol_for_video_WACV_2020_paper.pdf)]
+
+<p align = "justify"> 
+The RBDR evaluates the model's ability to accurately localize the spatial extent of anomalies within video frames. It is particularly useful for assessing how well a model can identify the regions where anomalies occur.This metric compares the detected anomaly regions with the ground truth annotations to compute a score. The comparison is often done using the Intersection over Union (IoU), which measures the overlap between the predicted region and the actual region of the anomaly.A higher RBDR score indicates better spatial localization performance, meaning the model is more accurate in identifying the correct area of the video frame where the anomaly happens.
+</p>
+
+RBDR=num. of anomalous regions detectedtotal num. of anomalous regions RBDR = \frac{num.\ of\ anomalous\ regions\ detected} {total\ num.\ of\ anomalous\ regions} 
+
+<p align = "justify"> 
+The TBDR is focused on the model's capability to detect and track anomalies over time, providing a measure of how well the model can localize anomalies across consecutive video frames. This criterion is especially relevant for scenarios where anomalies have a temporal component, such as an object moving in an unusual way or an event unfolding over several frames. Similar to RBDC, TBDR also uses IoU to measure the overlap between the predicted anomaly track and the ground truth track. However, it considers the temporal continuity, ensuring that the model not only detects the anomaly in individual frames but also maintains the correct tracking of the anomaly across the video sequence.
+</p>
+
+TBDR=num. of anomalous tracks detectedtotal num. of anomalous tracks TBDR = \frac{num.\ of\ anomalous\ tracks\ detected} {total\ num.\ of\ anomalous\ tracks} 
+
+<p align = "justify"> 
+While AUC metrics provide an overall performance measure, RBDR and TBDR offer insights into the spatial and temporal accuracy of the model's anomaly localization capabilities.
+</p>
+
+
+## 2.3 sentence-level and reasoning-based metrics
+
+### 2.3.1 BLUE(Bilingual Evaluation Understudy)[[Paper](https://aclanthology.org/P02-1040.Pdf)]
+### BLEU Evaluation Metric
+
+### BLEU Score Overview
+
+<p align = "justify"> 
+BLEU is a metric for evaluating the quality of machine translation. It measures the accuracy of a translation by comparing the n-gram overlap between the machine-generated translation and one or more human reference translations, while incorporating a length penalty to prevent overly short outputs. BLEU is primarily designed for **corpus-level evaluation** and is less reliable for single-sentence scoring. The BLEU score ranges from 0 to 1; even high-quality human translations rarely achieve a score close to 1. Using more reference translations generally leads to higher BLEU scores. BLEU is better suited for evaluating the overall performance of large-scale translation systems rather than individual sentences.
+</p>
+
+#### a. Modified n-gram Precision
+For n-grams of order \(n\), the modified precision is calculated as:
+
+\[
+p_n = \frac{\sum_{C \in \text{Candidates}} \sum_{n\text{-gram} \in C} \text{Count}_{\text{clip}}(n\text{-gram})}{\sum_{C' \in \text{Candidates}} \sum_{n\text{-gram} \in C'} \text{Count}(n\text{-gram})}
+\]
+
+ Here, \(\text{Count}_{\text{clip}}(n\text{-gram})\) is the clipped count, i.e., the maximum number of times an n-gram appears in any single reference translation.
+ Typically, precisions are computed for 1-gram up to 4-gram.
+
+#### b. Brevity Penalty (BP)
+To avoid rewarding translations that are too short, BLEU applies a brevity penalty:
+
+\[
+\text{BP} = 
+\begin{cases}
+1, & \text{if } c > r \\
+e^{(1 - r/c)}, & \text{if } c \leq r
+\end{cases}
+\]
+
+ \(c\) is the total length of the candidate translations.
+  \(r\) is the effective reference corpus length (best matching length).
+
+#### c. Final BLEU Score
+
+The overall BLEU score combines the modified n-gram precisions with the brevity penalty:
+
+\[
+\text{BLEU} = \text{BP} \cdot \exp\left( \sum_{n=1}^{N} w_n \log p_n \right)
+\]
+
+ Usually, \(N=4\) and weights \(w_n = \frac{1}{4}\).
+ This formula represents the geometric mean of the modified n-gram precisions multiplied by the brevity penalty.
+
+### 2.3.2 CIDEr(Consensus-based Image Description Evaluation)[[Paper](https://openaccess.thecvf.com/content_cvpr_2015/papers/Vedantam_CIDEr_Consensus-Based_Image_2015_CVPR_paper.pdf)]
+## CIDEr: Consensus-based Image Description Evaluation
+
+CIDEr is a metric specifically designed for image captioning tasks. It measures the similarity between a machine-generated caption and the **consensus of multiple human-written captions** for the same image. Unlike evaluating grammar or the “best” description, CIDEr focuses on how **human-like** a caption is by comparing it to several reference captions. CIDEr uses **TF-IDF weighted n-gram cosine similarity** to emphasize visually informative words while suppressing common ones. By combining n-grams of lengths 1 to 4, it captures both syntactic and semantic information, providing a more accurate assessment of caption relevance.
+
+#### a. TF-IDF Weight for n-gram \(\omega_k\)
+
+\[
+g_k(s_{ij}) = \frac{h_k(s_{ij})}{\sum_{\omega_l \in \Omega} h_l(s_{ij})} \cdot \log\left( \frac{|I|}{\sum_{p \in I} \min(1, \sum_q h_k(s_{pq}))} \right)
+\]
+
+ \(h_k(s_{ij})\): frequency of n-gram \(\omega_k\) in sentence \(s_{ij}\) (Term Frequency)
+ \(|I|\): total number of images
+ Denominator: number of images containing n-gram \(\omega_k\) (Inverse Document Frequency)
+
+
+
+#### b. CIDEr Score for n-grams of length \(n\)
+
+\[
+\text{CIDEr}_n(c_i, S_i) = \frac{1}{m} \sum_{j=1}^m \frac{\mathbf{g}_n(c_i) \cdot \mathbf{g}_n(s_{ij})}{\|\mathbf{g}_n(c_i)\| \cdot \|\mathbf{g}_n(s_{ij})\|}
+\]
+
+ \(c_i\): candidate caption
+ \(S_i = \{s_{i1}, ..., s_{im}\}\): set of reference captions
+ Computes the average cosine similarity between the TF-IDF vectors of the candidate and each reference caption
+
+
+
+#### c. Final CIDEr Score (combining 1- to 4-grams)
+
+\[
+\text{CIDEr}(c_i, S_i) = \sum_{n=1}^N w_n \cdot \text{CIDEr}_n(c_i, S_i)
+\]
+
+ Typically \(N=4\) with uniform weights \(w_n = \frac{1}{4}\)
+
+### 2.3.3 METEOR(Metric for Evaluation of Translation with Explicit ORdering)[[Paper](https://aclanthology.org/W05-0909.pdf)]
+### METEOR: An Automatic Metric for MT Evaluation
+
+METEOR is an automatic metric for machine translation (MT) evaluation. It was designed to address several limitations of BLEU, aiming for better correlation with human judgments by using flexible word matching, recall-oriented scoring, and explicit handling of word order. METEOR is an automatic machine translation evaluation metric that improves upon BLEU by incorporating flexible word matching (exact, stemmed, and synonym matches), placing greater emphasis on recall than precision, and penalizing word order disruptions through a fragmentation penalty. It aligns translations using a multi-stage process to minimize crossing links, computes a weighted harmonic mean of precision and recall, and applies penalties for disordered matches. Overall, METEOR provides sentence-level scores with stronger correlation to human judgments and handles linguistic variations more effectively than BLEU. METEOR produces scores ranging from 0 to 1, where higher values indicate better translation quality. For each sentence, the best score among multiple reference translations is selected, and an aggregate score is calculated at the corpus level to evaluate overall system performance. METEOR is a robust, recall-oriented machine translation evaluation metric. By incorporating stemming, synonymy, and word order sensitivity, it achieves superior correlation with human assessments compared to BLEU.
+
+#### a. Word Alignment
+System and reference translations are aligned in stages: Exact match; Stemmed match (Porter Stemmer); Synonym match (WordNet). Each stage aligns remaining unmapped words, minimizing crossing links to preserve word order.
+
+
+#### b. Precision & Recall Calculation
+
+Let:
+ \( m \): number of mapped unigrams
+ \( t \): total unigrams in system translation
+ \( r \): total unigrams in reference translation
+
+\[
+P = \frac{m}{t}, \quad R = \frac{m}{r}
+\]
+
+
+#### c. Weighted Harmonic Mean (Fmean)
+
+\[
+\text{Fmean} = \frac{10PR}{R + 9P}
+\]
+
+*(Recall is weighted 9× over precision)*
+
+
+#### d. Fragmentation Penalty
+
+Let:
+ \( \text{chunks} \): minimum number of contiguous matched segments
+
+\[
+\text{Penalty} = 0.5 \times \left( \frac{\text{chunks}}{m} \right)^3
+\]
+
+
+#### e. Final METEOR Score
+
+\[
+\text{METEOR Score} = \text{Fmean} \times (1 - \text{Penalty})
+\]
+
+### 2.3.4 ROUGE(Recall-Oriented Understudy for Gisting Evaluation)[[Paper](https://aclanthology.org/W04-1013.pdf)]
+
+ROUGE is a family of automatic metrics used to evaluate the quality of a **candidate summary** by measuring overlapping units—such as n-grams, longest common subsequences, and skip-bigrams—against one or more **human reference summaries**. It focuses primarily on recall but can incorporate precision and F-measures depending on the variant. For practical use, ROUGE-2, ROUGE-L, ROUGE-W, and ROUGE-S are recommended for single-document summaries, while ROUGE-1, ROUGE-L, ROUGE-SU4, and ROUGE-SU9 work best for headlines or very short summaries. For multi-document summaries, using ROUGE-1, ROUGE-2, ROUGE-S4/S9, and ROUGE-SU4/S9 combined with stop-word removal provides more stable correlation with human judgments. Employing multiple reference summaries consistently improves evaluation reliability. Additionally, stemming slightly enhances results, and stop-word removal is especially beneficial for multi-document tasks. Empirical evaluations on DUC datasets show that ROUGE achieves Pearson correlations up to 0.88 for single-document 100-word summaries, up to 0.97 for very short 10-word summaries, and between 0.70 and 0.85 for multi-document 100-word summaries. In summary, a good rule of thumb is to use ROUGE-2 for long single-document summaries, ROUGE-1/L/SU4 for headlines, and ROUGE-SU4 with stop-word removal for multi-document summaries, always leveraging multiple reference summaries when available.
+
+
+#### ROUGE Variants & Core Formulas
+
+| Variant   | Unit Measured               | Intuition                          | Formula (Single Reference)                                                                                 |
+|-----------|----------------------------|----------------------------------|------------------------------------------------------------------------------------------------------------|
+| **ROUGE-N**  | n-gram                    | n-gram recall vs. reference      | \[
+\text{ROUGE-N} = \frac{\sum_{S \in \{\text{ref}\}} \sum_{\text{gram}_n} \text{Count}_{\text{match}}(\text{gram}_n)}{\sum_{S \in \{\text{ref}\}} \sum_{\text{gram}_n} \text{Count}(\text{gram}_n)}
+\] |
+| **ROUGE-L**  | Longest Common Subsequence (LCS) | Sentence-level in-order word overlap | \[
+\text{ROUGE-L} = F_{\text{lcs}} = \frac{(1+\beta^2) R_{\text{lcs}} P_{\text{lcs}}}{R_{\text{lcs}} + \beta^2 P_{\text{lcs}}}
+\]
+where \[
+R_{\text{lcs}} = \frac{\text{LCS}(X,Y)}{m}, \quad P_{\text{lcs}} = \frac{\text{LCS}(X,Y)}{n}
+\] |
+| **ROUGE-W**  | Weighted LCS              | Rewards **consecutive** matches  | \( \text{ROUGE-W} = F_{\text{wlcs}} \) with weighted score \(\text{WLCS}(X,Y)\) using \( f(k) = k^2 \)        |
+| **ROUGE-S**  | Skip-bigram               | Any ordered word-pair (within skip-gap) | \[
+\text{ROUGE-S} = F_{\text{skip2}} = \frac{(1+\beta^2) R_{\text{skip2}} P_{\text{skip2}}}{R_{\text{skip2}} + \beta^2 P_{\text{skip2}}}
+\] |
+| **ROUGE-SU** | Skip-bigram + unigram     | Adds unigram to handle zero-match cases | Same as ROUGE-S but numerator and denominator include unigram hits                                         |
+
+> In DUC evaluations, \(\beta \to \infty\) is used, so only **recall** is reported for simplicity.
+
+#### Multi-Reference Handling
+
+For multiple reference summaries \( \{r_1, r_2, ..., r_M\} \), compute ROUGE scores between the candidate \(c\) and each reference, then take the maximum:
+
+\[
+\text{ROUGE-N}_{\text{multi}} = \max_{i=1..M} \text{ROUGE-N}(r_i, c)
+\]
+
+Official implementations use jackknifing: averaging max scores over leave-one-out reference sets to stabilize comparisons.
+
+#### Key Properties
+
+| Variant   | Requires Consecutive Matches? | Captures Word Order? | Sensitive to Sentence Structure? |
+|-----------|-------------------------------|---------------------|----------------------------------|
+| ROUGE-N   | Yes (for \(n \geq 2\))        | Partial             | Low                              |
+| ROUGE-L   | No (in-sequence only)          | Yes                 | High                             |
+| ROUGE-W   | No (but boosts consecutive)   | Yes                 | High                             |
+| ROUGE-S   | No                            | Yes (via skip-bigrams) | Medium                           |
+| ROUGE-SU  | No                            | Yes (+ unigram)      | Medium                           |
+
+
+### 2.3.5 MMEval()[[Paper](https://openaccess.thecvf.com/content/CVPR2024/papers/Du_Uncovering_What_Why_and_How_A_Comprehensive_Benchmark_for_Causation_CVPR_2024_paper.pdf)]
+
+Traditional Natural Language Generation (NLG) metrics like BLEU and ROUGE are text-only and fail to consider the visual evidence essential in video-text tasks. Causation Understanding of Video Anomaly requires evaluating free-text explanations for **cause** and **effect** grounded in video content. To address this, **MMEval** is proposed as a **multimodal** evaluation metric that leverages both video and text to align closely with human judgment. It works by constructing task-specific natural language prompts, selecting key video frames based on an importance curve that highlights anomalous segments, and feeding these frames along with the prompt and candidate answer into a frozen Video-ChatGPT model. The model outputs a scalar score (0–100) and a short rationale, enabling transparent and explainable evaluation. MMEval is task-agnostic (using the same model with different prompts) and achieves high human consistency with Spearman correlation between 0.82 and 0.89. The approach reduces noise and computation by densely sampling only the most relevant frames according to a threshold set on the importance curve.
+
+Given a video clip \(V\), a task-specific prompt \(P_{\text{task}}\) (for Description, Cause, or Effect), and a candidate free-text answer \(A\), MMEval uses a frozen Video-ChatGPT model \(\Phi(\cdot)\) to compute a scalar score and ranking:
+
+\[
+s = \Phi(V', P_{\text{task}}, A) \in [0, 100]
+\]
+
+\[
+\text{rank}(A) = \text{ordinal position after sorting all } s \text{ in descending order}
+\]
+
+Here, \(V'\) is a subset of video frames selected by thresholding the importance curve \(I(t)\) (which measures anomaly relevance over time):
+
+\[
+\tau = \mu + \sigma
+\]
+
+Frames with importance scores \(I(t) \geq \tau\) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
+
 
 
 
