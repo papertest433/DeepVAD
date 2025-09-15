@@ -505,7 +505,7 @@ $$
 p_n = \frac{\sum_{C \in \text{Candidates}} \sum_{n\text{-gram} \in C} \text{Count}_{\text{clip}}(n\text{-gram})}{\sum_{C' \in \text{Candidates}} \sum_{n\text{-gram} \in C'} \text{Count}(n\text{-gram})}
 $$
 
- Here, \(\text{Count}_{\text{clip}}(n\text{-gram})\) is the clipped count, i.e., the maximum number of times an n-gram appears in any single reference translation.
+ Here, $`\text{Count}_{\text{clip}}(n\text{-gram})`$ is the clipped count, i.e., the maximum number of times an n-gram appears in any single reference translation.
  Typically, precisions are computed for 1-gram up to 4-gram.
 
 #### b. Brevity Penalty (BP)
@@ -684,6 +684,7 @@ $$
 $$
 
 Frames with importance scores \(I(t) \geq \tau\) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
