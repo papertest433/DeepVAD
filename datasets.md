@@ -511,13 +511,13 @@ $$
 #### b. Brevity Penalty (BP)
 To avoid rewarding translations that are too short, BLEU applies a brevity penalty:
 
-\[
+$$
 \text{BP} = 
 \begin{cases}
 1, & \text{if } c > r \\
 e^{(1 - r/c)}, & \text{if } c \leq r
 \end{cases}
-\]
+$$
 
  \(c\) is the total length of the candidate translations.
   \(r\) is the effective reference corpus length (best matching length).
@@ -526,9 +526,9 @@ e^{(1 - r/c)}, & \text{if } c \leq r
 
 The overall BLEU score combines the modified n-gram precisions with the brevity penalty:
 
-\[
+$$
 \text{BLEU} = \text{BP} \cdot \exp\left( \sum_{n=1}^{N} w_n \log p_n \right)
-\]
+$$
 
  Usually, \(N=4\) and weights \(w_n = \frac{1}{4}\).
  This formula represents the geometric mean of the modified n-gram precisions multiplied by the brevity penalty.
@@ -540,9 +540,9 @@ CIDEr is a metric specifically designed for image captioning tasks. It measures 
 
 #### a. TF-IDF Weight for n-gram \(\omega_k\)
 
-\[
+$$
 g_k(s_{ij}) = \frac{h_k(s_{ij})}{\sum_{\omega_l \in \Omega} h_l(s_{ij})} \cdot \log\left( \frac{|I|}{\sum_{p \in I} \min(1, \sum_q h_k(s_{pq}))} \right)
-\]
+$$
 
  \(h_k(s_{ij})\): frequency of n-gram \(\omega_k\) in sentence \(s_{ij}\) (Term Frequency)
  \(|I|\): total number of images
@@ -552,9 +552,9 @@ g_k(s_{ij}) = \frac{h_k(s_{ij})}{\sum_{\omega_l \in \Omega} h_l(s_{ij})} \cdot \
 
 #### b. CIDEr Score for n-grams of length \(n\)
 
-\[
+$$
 \text{CIDEr}_n(c_i, S_i) = \frac{1}{m} \sum_{j=1}^m \frac{\mathbf{g}_n(c_i) \cdot \mathbf{g}_n(s_{ij})}{\|\mathbf{g}_n(c_i)\| \cdot \|\mathbf{g}_n(s_{ij})\|}
-\]
+$$
 
  \(c_i\): candidate caption
  \(S_i = \{s_{i1}, ..., s_{im}\}\): set of reference captions
@@ -564,9 +564,9 @@ g_k(s_{ij}) = \frac{h_k(s_{ij})}{\sum_{\omega_l \in \Omega} h_l(s_{ij})} \cdot \
 
 #### c. Final CIDEr Score (combining 1- to 4-grams)
 
-\[
+$$
 \text{CIDEr}(c_i, S_i) = \sum_{n=1}^N w_n \cdot \text{CIDEr}_n(c_i, S_i)
-\]
+$$
 
  Typically \(N=4\) with uniform weights \(w_n = \frac{1}{4}\)
 
@@ -586,16 +586,16 @@ Let:
  \( t \): total unigrams in system translation
  \( r \): total unigrams in reference translation
 
-\[
+$$
 P = \frac{m}{t}, \quad R = \frac{m}{r}
-\]
+$$
 
 
 #### c. Weighted Harmonic Mean (Fmean)
 
-\[
+$$
 \text{Fmean} = \frac{10PR}{R + 9P}
-\]
+$$
 
 *(Recall is weighted 9× over precision)*
 
@@ -605,16 +605,16 @@ P = \frac{m}{t}, \quad R = \frac{m}{r}
 Let:
  \( \text{chunks} \): minimum number of contiguous matched segments
 
-\[
+$$
 \text{Penalty} = 0.5 \times \left( \frac{\text{chunks}}{m} \right)^3
-\]
+$$
 
 
 #### e. Final METEOR Score
 
-\[
+$$
 \text{METEOR Score} = \text{Fmean} \times (1 - \text{Penalty})
-\]
+$$
 
 ### 2.3.4 ROUGE(Recall-Oriented Understudy for Gisting Evaluation)[[Paper](https://aclanthology.org/W04-1013.pdf)]
 
@@ -646,9 +646,9 @@ R_{\text{lcs}} = \frac{\text{LCS}(X,Y)}{m}, \quad P_{\text{lcs}} = \frac{\text{L
 
 For multiple reference summaries \( \{r_1, r_2, ..., r_M\} \), compute ROUGE scores between the candidate \(c\) and each reference, then take the maximum:
 
-\[
+$$
 \text{ROUGE-N}_{\text{multi}} = \max_{i=1..M} \text{ROUGE-N}(r_i, c)
-\]
+$$
 
 Official implementations use jackknifing: averaging max scores over leave-one-out reference sets to stabilize comparisons.
 
@@ -669,21 +669,22 @@ Traditional Natural Language Generation (NLG) metrics like BLEU and ROUGE are te
 
 Given a video clip \(V\), a task-specific prompt \(P_{\text{task}}\) (for Description, Cause, or Effect), and a candidate free-text answer \(A\), MMEval uses a frozen Video-ChatGPT model \(\Phi(\cdot)\) to compute a scalar score and ranking:
 
-\[
+$$
 s = \Phi(V', P_{\text{task}}, A) \in [0, 100]
-\]
+$$
 
-\[
+$$
 \text{rank}(A) = \text{ordinal position after sorting all } s \text{ in descending order}
-\]
+$$
 
 Here, \(V'\) is a subset of video frames selected by thresholding the importance curve \(I(t)\) (which measures anomaly relevance over time):
 
-\[
+$$
 \tau = \mu + \sigma
-\]
+$$
 
 Frames with importance scores \(I(t) \geq \tau\) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
