@@ -625,19 +625,19 @@ ROUGE is a family of automatic metrics used to evaluate the quality of a **candi
 
 | Variant   | Unit Measured               | Intuition                          | Formula (Single Reference)                                                                                 |
 |-----------|----------------------------|----------------------------------|------------------------------------------------------------------------------------------------------------|
-| **ROUGE-N**  | n-gram                    | n-gram recall vs. reference      | $`
-\text{ROUGE-N} = \frac{\sum_{S \in \{\text{ref}\}} \sum_{\text{gram}_n} \text{Count}_{\text{match}}(\text{gram}_n)}{\sum_{S \in \{\text{ref}\}} \sum_{\text{gram}_n} \text{Count}(\text{gram}_n)}
-`$ |
-| **ROUGE-L**  | Longest Common Subsequence (LCS) | Sentence-level in-order word overlap | $`
-\text{ROUGE-L} = F_{\text{lcs}} = \frac{(1+\beta^2) R_{\text{lcs}} P_{\text{lcs}}}{R_{\text{lcs}} + \beta^2 P_{\text{lcs}}}
-`$
-where $`
-R_{\text{lcs}} = \frac{\text{LCS}(X,Y)}{m}, \quad P_{\text{lcs}} = \frac{\text{LCS}(X,Y)}{n}
-`$ |
+| **ROUGE-N**  | n-gram                    | n-gram recall vs. reference      | 
+$` \text{ROUGE-N} = \frac{\sum_{S \in \{\text{ref}\}} \sum_{\text{gram}_n} \text{Count}_{\text{match}}(\text{gram}_n)}{\sum_{S \in \{\text{ref}\}} \sum_{\text{gram}_n} \text{Count}(\text{gram}_n)} `$
+ |
+| **ROUGE-L**  | Longest Common Subsequence (LCS) | Sentence-level in-order word overlap | 
+$` \text{ROUGE-L} = F_{\text{lcs}} = \frac{(1+\beta^2) R_{\text{lcs}} P_{\text{lcs}}}{R_{\text{lcs}} + \beta^2 P_{\text{lcs}}} `$
+
+where 
+$` R_{\text{lcs}} = \frac{\text{LCS}(X,Y)}{m}, \quad P_{\text{lcs}} = \frac{\text{LCS}(X,Y)}{n} `$
+ |
 | **ROUGE-W**  | Weighted LCS              | Rewards **consecutive** matches  | $` \text{ROUGE-W} = F_{\text{wlcs}}  with weighted score \text{WLCS}(X,Y) using f(k) = k^2 `$        |
 | **ROUGE-S**  | Skip-bigram               | Any ordered word-pair (within skip-gap) | $`
-\text{ROUGE-S} = F_{\text{skip2}} = \frac{(1+\beta^2) R_{\text{skip2}} P_{\text{skip2}}}{R_{\text{skip2}} + \beta^2 P_{\text{skip2}}}
-`$ |
+\text{ROUGE-S} = F_{\text{skip2}} = \frac{(1+\beta^2) R_{\text{skip2}} P_{\text{skip2}}}{R_{\text{skip2}} + \beta^2 P_{\text{skip2}}} `$
+ |
 | **ROUGE-SU** | Skip-bigram + unigram     | Adds unigram to handle zero-match cases | Same as ROUGE-S but numerator and denominator include unigram hits                                         |
 
 > In DUC evaluations, $`\beta \to \infty`$ is used, so only **recall** is reported for simplicity.
@@ -684,6 +684,7 @@ $$
 $$
 
 Frames with importance scores $` I(t) \geq \tau `$ are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
