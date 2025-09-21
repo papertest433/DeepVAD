@@ -625,26 +625,26 @@ ROUGE is a family of automatic metrics used to evaluate the quality of a **candi
 
 | Variant   | Unit Measured               | Intuition                          | Formula (Single Reference)                                                                                 |
 |-----------|----------------------------|----------------------------------|------------------------------------------------------------------------------------------------------------|
-| **ROUGE-N**  | n-gram                    | n-gram recall vs. reference      | \[
+| **ROUGE-N**  | n-gram                    | n-gram recall vs. reference      | $`
 \text{ROUGE-N} = \frac{\sum_{S \in \{\text{ref}\}} \sum_{\text{gram}_n} \text{Count}_{\text{match}}(\text{gram}_n)}{\sum_{S \in \{\text{ref}\}} \sum_{\text{gram}_n} \text{Count}(\text{gram}_n)}
-\] |
-| **ROUGE-L**  | Longest Common Subsequence (LCS) | Sentence-level in-order word overlap | \[
+`$ |
+| **ROUGE-L**  | Longest Common Subsequence (LCS) | Sentence-level in-order word overlap | $`
 \text{ROUGE-L} = F_{\text{lcs}} = \frac{(1+\beta^2) R_{\text{lcs}} P_{\text{lcs}}}{R_{\text{lcs}} + \beta^2 P_{\text{lcs}}}
-\]
-where \[
+`$
+where $`
 R_{\text{lcs}} = \frac{\text{LCS}(X,Y)}{m}, \quad P_{\text{lcs}} = \frac{\text{LCS}(X,Y)}{n}
-\] |
-| **ROUGE-W**  | Weighted LCS              | Rewards **consecutive** matches  | \( \text{ROUGE-W} = F_{\text{wlcs}} \) with weighted score \(\text{WLCS}(X,Y)\) using \( f(k) = k^2 \)        |
-| **ROUGE-S**  | Skip-bigram               | Any ordered word-pair (within skip-gap) | \[
+`$ |
+| **ROUGE-W**  | Weighted LCS              | Rewards **consecutive** matches  | $` \text{ROUGE-W} = F_{\text{wlcs}}  with weighted score \text{WLCS}(X,Y) using f(k) = k^2 `$        |
+| **ROUGE-S**  | Skip-bigram               | Any ordered word-pair (within skip-gap) | $`
 \text{ROUGE-S} = F_{\text{skip2}} = \frac{(1+\beta^2) R_{\text{skip2}} P_{\text{skip2}}}{R_{\text{skip2}} + \beta^2 P_{\text{skip2}}}
-\] |
+`$ |
 | **ROUGE-SU** | Skip-bigram + unigram     | Adds unigram to handle zero-match cases | Same as ROUGE-S but numerator and denominator include unigram hits                                         |
 
-> In DUC evaluations, \(\beta \to \infty\) is used, so only **recall** is reported for simplicity.
+> In DUC evaluations, $`\beta \to \infty`$ is used, so only **recall** is reported for simplicity.
 
 #### Multi-Reference Handling
 
-For multiple reference summaries \( \{r_1, r_2, ..., r_M\} \), compute ROUGE scores between the candidate \(c\) and each reference, then take the maximum:
+For multiple reference summaries  $` {r_1, r_2, ..., r_M} `$ , compute ROUGE scores between the candidate c and each reference, then take the maximum:
 
 $$
 \text{ROUGE-N}_{\text{multi}} = \max_{i=1..M} \text{ROUGE-N}(r_i, c)
@@ -667,7 +667,7 @@ Official implementations use jackknifing: averaging max scores over leave-one-ou
 
 Traditional Natural Language Generation (NLG) metrics like BLEU and ROUGE are text-only and fail to consider the visual evidence essential in video-text tasks. Causation Understanding of Video Anomaly requires evaluating free-text explanations for **cause** and **effect** grounded in video content. To address this, **MMEval** is proposed as a **multimodal** evaluation metric that leverages both video and text to align closely with human judgment. It works by constructing task-specific natural language prompts, selecting key video frames based on an importance curve that highlights anomalous segments, and feeding these frames along with the prompt and candidate answer into a frozen Video-ChatGPT model. The model outputs a scalar score (0–100) and a short rationale, enabling transparent and explainable evaluation. MMEval is task-agnostic (using the same model with different prompts) and achieves high human consistency with Spearman correlation between 0.82 and 0.89. The approach reduces noise and computation by densely sampling only the most relevant frames according to a threshold set on the importance curve.
 
-Given a video clip \(V\), a task-specific prompt \(P_{\text{task}}\) (for Description, Cause, or Effect), and a candidate free-text answer \(A\), MMEval uses a frozen Video-ChatGPT model \(\Phi(\cdot)\) to compute a scalar score and ranking:
+Given a video clip V, a task-specific prompt $` P_{\text{task}} `$ (for Description, Cause, or Effect), and a candidate free-text answer A, MMEval uses a frozen Video-ChatGPT model \Phi(\cdot) to compute a scalar score and ranking:
 
 $$
 s = \Phi(V', P_{\text{task}}, A) \in [0, 100]
@@ -683,7 +683,8 @@ $$
 \tau = \mu + \sigma
 $$
 
-Frames with importance scores \(I(t) \geq \tau\) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+Frames with importance scores $` I(t) \geq \tau `$ are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
