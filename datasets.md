@@ -550,11 +550,11 @@ $$
 
 
 
-#### b. CIDEr Score for n-grams of length \(n\)
+#### b. CIDEr Score for n-grams of length 
 
-$$
-\text{CIDEr}_n(c_i, S_i) = \frac{1}{m} \sum_{j=1}^m \frac{\mathbf{g}_n(c_i) \cdot \mathbf{g}_n(s_{ij})}{\|\mathbf{g}_n(c_i)\| \cdot \|\mathbf{g}_n(s_{ij})\|}
-$$
+
+$ \text{CIDEr}_n(c_i, S_i) = \frac{1}{m} \sum_{j=1}^m \frac{\mathbf{g}_n(c_i) \cdot \mathbf{g}_n(s_{ij})}{\|\mathbf{g}_n(c_i)\| \cdot \|\mathbf{g}_n(s_{ij})\|} $
+
 
  $`c_i`$: candidate caption
  $`S_i = \{s_{i1}, ..., s_{im}\}`$: set of reference captions
@@ -684,6 +684,7 @@ $$
 $$
 
 Frames with importance scores $` I(t) \geq \tau `$ are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
