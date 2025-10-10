@@ -384,7 +384,7 @@ The dataset is a human-centric video surveillance captioning dataset. This datas
 AUC refers to the area under the Receiver Operating Characteristic (ROC) Curve. The ROC Curve is created by plotting the True Positive Rate (TPR) against the False Positive Rate (FPR) at various threshold settings.
 </p>
 
-$ TPR=\frac{TP}{TP+FN} $
+\$TPR=\frac{TP}{TP+FN}\$
 
 
 $$ 
@@ -683,6 +683,7 @@ $$
 $$
 
 Frames with importance scores $` I(t) \geq \tau `$ are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
