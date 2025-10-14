@@ -385,6 +385,7 @@ AUC refers to the area under the Receiver Operating Characteristic (ROC) Curve. 
 </p>
 
 $TPR=\frac{TP}{TP+FN}$
+![](https://latex.codecogs.com/svg.image?TPR=\frac{TP}{TP+FN})
 
 
 $$ 
@@ -683,6 +684,7 @@ $$
 $$
 
 Frames with importance scores $` I(t) \geq \tau `$ are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
