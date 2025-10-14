@@ -460,8 +460,9 @@ TIoU is a video anomaly detection-specific metric that combines the temporal ano
 </p>
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\Large%20TIoU=\frac{1}{M}\sum_{j=1} ^M \frac{Area_p \cap Area_g}{Area_p \cup Area_g} \cdot II[P_j \geq Threshold]" alt="TIoU"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20TIoU=\frac{1}{M}\sum_{j=1}^{M}%20\frac{Area_p%20\cap%20Area_g}{Area_p%20\cup%20Area_g}%20\cdot%20\mathbb{I}[P_j%20\geq%20Threshold]" alt="TIoU公式"/>
 </p>
+
 
 <p align = "justify"> 
 where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anomaly clip are predicted as anomaly according to the probability score 𝑃𝑗, 𝐴𝑟𝑒𝑎_𝑝represents the area of predicted anomalous region, 𝐴𝑟𝑒𝑎𝑔 is the area of annotated region, and 𝑀 is the number of clips that anomaly occurs.
@@ -691,6 +692,7 @@ Here, V is a subset of video frames selected by thresholding the importance curv
 </p>
 
 Frames with importance scores  I(t) \geq \tau  are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
