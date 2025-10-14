@@ -385,13 +385,13 @@ AUC refers to the area under the Receiver Operating Characteristic (ROC) Curve. 
 </p>
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\Large%20TPR=\frac{TP}{TP+FN}" alt="TPR公式"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20TPR=\frac{TP}{TP+FN}" alt="TPR"/>
 </p>
 
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\Large%20FPR=\frac{FP}{FP+TN}" alt="FPR"/>
+</p>
 
-$$ 
-FPR=\frac{FP}{FP+TN} 
-$$
 
 <p align = "justify"> 
 Where: TP(True Positives) is the number of actual positive instances, i.e., the count of samples correctly predicted as positive.TN(True Negatives) is the number of actual negative instances, i.e., the count of samples correctly predicted as negative.FP(False Positives) is the number of false positive instances, i.e., the count of samples incorrectly predicted as positive.FN(False Negatives) is the number of false negative instances, i.e., the count of samples incorrectly predicted as negative.
@@ -437,9 +437,9 @@ EER provides a point of balance, while EDR emphasizes the completeness of detect
 Accuracy is a performance measurement for classification models or diagnostic tests that reflects the ratio of the number of correct predictions to the total number of predictions. It is one of the most intuitive performance metrics, especially in binary or multi-class classification problems.Accuracy is typically calculated using the following formula:  
 </p>
 
-$$
-Accuracy=\frac{TP+TN}{TP+TN+FP+FN}  
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\Large%20Accuracy=\frac{TP+TN}{TP+TN+FP+FN}" alt="Accuracy"/>
+</p>
 
 <p align = "justify"> 
 Where: TP(True Positives) is the number of actual positive instances, i.e., the count of samples correctly predicted as positive.TN(True Negatives) is the number of actual negative instances, i.e., the count of samples correctly predicted as negative.FP(False Positives) is the number of false positive instances, i.e., the count of samples incorrectly predicted as positive.FN(False Negatives) is the number of false negative instances, i.e., the count of samples incorrectly predicted as negative.
@@ -459,7 +459,9 @@ Accuracy is often used for a quick assessment of model performance but is usuall
 TIoU is a video anomaly detection-specific metric that combines the temporal anomaly detection score with the model's ability to spatially locate the learned pattern of anomalies.TIoU evaluates the model's spatial localization accuracy by calculating the intersection over union (IoU) between the model's predicted anomaly region and the manually annotated region. This metric not only considers the model's ability to detect anomalies over time but also assesses the spatial accuracy of the model's anomaly localization.
 </p>
 
-$$ TIoU=\frac{1}{M}\sum_{j=1} ^M \frac{Area_p \cap Area_g}{Area_p \cup Area_g} \cdot II[P_j \geq Threshold] $$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\Large%20TIoU=\frac{1}{M}\sum_{j=1} ^M \frac{Area_p \cap Area_g}{Area_p \cup Area_g} \cdot II[P_j \geq Threshold]" alt="TIoU"/>
+</p>
 
 <p align = "justify"> 
 where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anomaly clip are predicted as anomaly according to the probability score 𝑃𝑗, 𝐴𝑟𝑒𝑎_𝑝represents the area of predicted anomalous region, 𝐴𝑟𝑒𝑎𝑔 is the area of annotated region, and 𝑀 is the number of clips that anomaly occurs.
@@ -471,17 +473,17 @@ where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anom
 The RBDR evaluates the model's ability to accurately localize the spatial extent of anomalies within video frames. It is particularly useful for assessing how well a model can identify the regions where anomalies occur.This metric compares the detected anomaly regions with the ground truth annotations to compute a score. The comparison is often done using the Intersection over Union (IoU), which measures the overlap between the predicted region and the actual region of the anomaly.A higher RBDR score indicates better spatial localization performance, meaning the model is more accurate in identifying the correct area of the video frame where the anomaly happens.
 </p>
 
-$$
-RBDR = \frac{num.\ of\ anomalous\ regions\ detected} {total\ num.\ of\ anomalous\ regions} 
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\Large%20RBDR = \frac{num.\ of\ anomalous\ regions\ detected} {total\ num.\ of\ anomalous\ regions} " alt="RBDR"/>
+</p>
 
 <p align = "justify"> 
 The TBDR is focused on the model's capability to detect and track anomalies over time, providing a measure of how well the model can localize anomalies across consecutive video frames. This criterion is especially relevant for scenarios where anomalies have a temporal component, such as an object moving in an unusual way or an event unfolding over several frames. Similar to RBDC, TBDR also uses IoU to measure the overlap between the predicted anomaly track and the ground truth track. However, it considers the temporal continuity, ensuring that the model not only detects the anomaly in individual frames but also maintains the correct tracking of the anomaly across the video sequence.
 </p>
 
-$$
-TBDR = \frac{num.\ of\ anomalous\ tracks\ detected} {total\ num.\ of\ anomalous\ tracks} 
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\Large%20TBDR = \frac{num.\ of\ anomalous\ tracks\ detected} {total\ num.\ of\ anomalous\ tracks} " alt="TBDR"/>
+</p>
 
 <p align = "justify"> 
 While AUC metrics provide an overall performance measure, RBDR and TBDR offer insights into the spatial and temporal accuracy of the model's anomaly localization capabilities.
@@ -502,9 +504,9 @@ BLEU is a metric for evaluating the quality of machine translation. It measures 
 #### a. Modified n-gram Precision
 For n-grams of order \(n\), the modified precision is calculated as:
 
-$$
-p_n = \frac{\sum_{C \in \text{Candidates}} \sum_{n\text{-gram} \in C} \text{Count}_{\text{clip}}(n\text{-gram})}{\sum_{C' \in \text{Candidates}} \sum_{n\text{-gram} \in C'} \text{Count}(n\text{-gram})}
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\Large%20p_n = \frac{\sum_{C \in \text{Candidates}} \sum_{n\text{-gram} \in C} \text{Count}_{\text{clip}}(n\text{-gram})}{\sum_{C' \in \text{Candidates}} \sum_{n\text{-gram} \in C'} \text{Count}(n\text{-gram})}" alt="p_n"/>
+</p>
 
  Here, $`\text{Count}_{\text{clip}}(n\text{-gram})`$ is the clipped count, i.e., the maximum number of times an n-gram appears in any single reference translation.
  Typically, precisions are computed for 1-gram up to 4-gram.
@@ -512,26 +514,27 @@ $$
 #### b. Brevity Penalty (BP)
 To avoid rewarding translations that are too short, BLEU applies a brevity penalty:
 
-$$
-\text{BP} = 
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{BP} = 
 \begin{cases}
 1, & \text{if } c > r \\
 e^{(1 - r/c)}, & \text{if } c \leq r
-\end{cases}
-$$
+\end{cases}" alt="BP"/>
+</p>
 
- $`c`$ is the total length of the candidate translations.
- $`r`$ is the effective reference corpus length (best matching length).
+ c is the total length of the candidate translations.
+ r is the effective reference corpus length (best matching length).
 
 #### c. Final BLEU Score
 
 The overall BLEU score combines the modified n-gram precisions with the brevity penalty:
 
-$$
-\text{BLEU} = \text{BP} \cdot \exp\left( \sum_{n=1}^{N} w_n \log p_n \right)
-$$
 
- Usually, $`N=4`andweights\(wn=14\)‘ and weights $`w_n = \frac{1}{4}`$.
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{BLEU} = \text{BP} \cdot \exp\left( \sum_{n=1}^{N} w_n \log p_n \right)" alt="BLEU"/>
+</p>
+
+ Usually, N=4 and weights ![w_n = \frac{1}{4}](https://latex.codecogs.com/svg.image?w_n = \frac{1}{4}).
  This formula represents the geometric mean of the modified n-gram precisions multiplied by the brevity penalty.
 
 ### 2.3.2 CIDEr(Consensus-based Image Description Evaluation)[[Paper](https://openaccess.thecvf.com/content_cvpr_2015/papers/Vedantam_CIDEr_Consensus-Based_Image_2015_CVPR_paper.pdf)]
@@ -539,37 +542,38 @@ $$
 
 CIDEr is a metric specifically designed for image captioning tasks. It measures the similarity between a machine-generated caption and the **consensus of multiple human-written captions** for the same image. Unlike evaluating grammar or the “best” description, CIDEr focuses on how **human-like** a caption is by comparing it to several reference captions. CIDEr uses **TF-IDF weighted n-gram cosine similarity** to emphasize visually informative words while suppressing common ones. By combining n-grams of lengths 1 to 4, it captures both syntactic and semantic information, providing a more accurate assessment of caption relevance.
 
-#### a. TF-IDF Weight for n-gram \(\omega_k\)
+#### a. TF-IDF Weight for n-gram \omega_k
 
-$$
-g_k(s_{ij}) = \frac{h_k(s_{ij})}{\sum_{\omega_l \in \Omega} h_l(s_{ij})} \cdot \log\left( \frac{|I|}{\sum_{p \in I} \min(1, \sum_q h_k(s_{pq}))} \right)
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\Large%20g_k(s_{ij}) = \frac{h_k(s_{ij})}{\sum_{\omega_l \in \Omega} h_l(s_{ij})} \cdot \log\left( \frac{|I|}{\sum_{p \in I} \min(1, \sum_q h_k(s_{pq}))} \right)" alt="g_k"/>
+</p>
 
- $`h_k(s_{ij}): frequency of n-gram \omega_k in sentence s_{ij} (Term Frequency)`$
- $`|I|`$: total number of images
- Denominator: number of images containing n-gram $`\omega_k`$ (Inverse Document Frequency)
+ ![h_k(s_{ij})](https://latex.codecogs.com/svg.image?h_k(s_{ij})): frequency of n-gram \omega_k in sentence s_{ij} (Term Frequency)
+ |I|: total number of images
+ Denominator: number of images containing n-gram \omega_k (Inverse Document Frequency)
 
 
 
 #### b. CIDEr Score for n-grams of length 
 
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\text{CIDEr}_n(c_i, S_i) = \frac{1}{m} \sum_{j=1}^m \frac{\mathbf{g}_n(c_i) \cdot \mathbf{g}_n(s_{ij})}{\|\mathbf{g}_n(c_i)\| \cdot \|\mathbf{g}_n(s_{ij})\|}" alt="CIDEr"/>
+</p>
 
-$ \text{CIDEr}_n(c_i, S_i) = \frac{1}{m} \sum_{j=1}^m \frac{\mathbf{g}_n(c_i) \cdot \mathbf{g}_n(s_{ij})}{\|\mathbf{g}_n(c_i)\| \cdot \|\mathbf{g}_n(s_{ij})\|} $
 
-
- $`c_i`$: candidate caption
- $`S_i = \{s_{i1}, ..., s_{im}\}`$: set of reference captions
+ c_i: candidate caption
+ S_i = {s_{i1}, ..., s_{im}}: set of reference captions
  Computes the average cosine similarity between the TF-IDF vectors of the candidate and each reference caption
 
 
 
 #### c. Final CIDEr Score (combining 1- to 4-grams)
 
-$$
-\text{CIDEr}(c_i, S_i) = \sum_{n=1}^N w_n \cdot \text{CIDEr}_n(c_i, S_i)
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\text{CIDEr}(c_i, S_i) = \sum_{n=1}^N w_n \cdot \text{CIDEr}_n(c_i, S_i)" alt="CIDEr"/>
+</p>
 
- Typically N=4 withuniformweightsN=4 with uniform weights $` w_n = \frac{1}{4} `$
+ Typically N=4 withuniformweightsN=4 with uniform weights  w_n = \frac{1}{4} 
 
 ### 2.3.3 METEOR(Metric for Evaluation of Translation with Explicit ORdering)[[Paper](https://aclanthology.org/W05-0909.pdf)]
 ### METEOR: An Automatic Metric for MT Evaluation
@@ -583,20 +587,21 @@ System and reference translations are aligned in stages: Exact match; Stemmed ma
 #### b. Precision & Recall Calculation
 
 Let:
- $`m`$ : number of mapped unigrams
- $`t`$ : total unigrams in system translation
- $`r`$ : total unigrams in reference translation
+ m : number of mapped unigrams
+ t : total unigrams in system translation
+ r : total unigrams in reference translation
 
-$$
-P = \frac{m}{t}, \quad R = \frac{m}{r}
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?P = \frac{m}{t}, \quad R = \frac{m}{r}" alt="P"/>
+</p>
 
 
 #### c. Weighted Harmonic Mean (Fmean)
 
-$$
-\text{Fmean} = \frac{10PR}{R + 9P}
-$$
+
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\text{Fmean} = \frac{10PR}{R + 9P}" alt="Fmean"/>
+</p>
 
 *(Recall is weighted 9× over precision)*
 
@@ -604,18 +609,18 @@ $$
 #### d. Fragmentation Penalty
 
 Let:
- ‘chunks‘`\text{chunks}`: minimum number of contiguous matched segments
+ chunks: minimum number of contiguous matched segments
 
-$$
-\text{Penalty} = 0.5 \times \left( \frac{\text{chunks}}{m} \right)^3
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\text{Penalty} = 0.5 \times \left( \frac{\text{chunks}}{m} \right)^3" alt="Penalty"/>
+</p>
 
 
 #### e. Final METEOR Score
 
-$$
-\text{METEOR Score} = \text{Fmean} \times (1 - \text{Penalty})
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\text{METEOR Score} = \text{Fmean} \times (1 - \text{Penalty})" alt="METEOR Score"/>
+</p>
 
 ### 2.3.4 ROUGE(Recall-Oriented Understudy for Gisting Evaluation)[[Paper](https://aclanthology.org/W04-1013.pdf)]
 
@@ -670,21 +675,23 @@ Traditional Natural Language Generation (NLG) metrics like BLEU and ROUGE are te
 
 Given a video clip V, a task-specific prompt $` P_{\text{task}} `$ (for Description, Cause, or Effect), and a candidate free-text answer A, MMEval uses a frozen Video-ChatGPT model \Phi(\cdot) to compute a scalar score and ranking:
 
-$$
-s = \Phi(V', P_{\text{task}}, A) \in [0, 100]
-$$
 
-$$
-\text{rank}(A) = \text{ordinal position after sorting all } s \text{ in descending order}
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?s = \Phi(V', P_{\text{task}}, A) \in [0, 100]" alt="s"/>
+</p>
 
-Here, \(V'\) is a subset of video frames selected by thresholding the importance curve \(I(t)\) (which measures anomaly relevance over time):
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\text{rank}(A) = \text{ordinal position after sorting all } s \text{ in descending order}" alt="rankA"/>
+</p>
 
-$$
-\tau = \mu + \sigma
-$$
+Here, V is a subset of video frames selected by thresholding the importance curve I(t) (which measures anomaly relevance over time):
 
-Frames with importance scores $` I(t) \geq \tau `$ are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\tau = \mu + \sigma" alt="tau"/>
+</p>
+
+Frames with importance scores  I(t) \geq \tau  are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
