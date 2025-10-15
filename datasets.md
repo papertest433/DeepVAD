@@ -681,20 +681,23 @@ Given a video clip V, a task-specific prompt $` P_{\text{task}} `$ (for Descript
 
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?s = \Phi(V', P_{\text{task}}, A) \in [0, 100]" alt="s"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20s=%20\Phi(V',%20P_{\text{task}},%20A)%20\in%20[0,%20100]" alt="s"/>
 </p>
 
+
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\text{rank}(A) = \text{ordinal position after sorting all } s \text{ in descending order}" alt="rankA"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{rank}(A)=%20\text{ordinal%20position%20after%20sorting%20all%20}%20s%20\text{%20in%20descending%20order}" alt="rank(A)"/>
 </p>
+
 
 Here, V is a subset of video frames selected by thresholding the importance curve I(t) (which measures anomaly relevance over time):
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\tau = \mu + \sigma" alt="tau"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20\tau=%20\mu+%20\sigma" alt="tau公式"/>
 </p>
 
 Frames with importance scores  I(t) \geq \tau  are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
