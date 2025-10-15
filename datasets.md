@@ -484,7 +484,7 @@ The TBDR is focused on the model's capability to detect and track anomalies over
 </p>
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\Large%20TBDR=%20\frac{\text{num. of anomalous tracks detected}}{\text{total num. of anomalous tracks}}" alt="TBDR"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20TBDR=%20\frac{\text{num.%20of%20anomalous%20tracks%20detected}}{\text{total%20num.%20of%20anomalous%20tracks}}" alt="TBDR"/>
 </p>
 
 
@@ -518,7 +518,7 @@ For n-grams of order \(n\), the modified precision is calculated as:
 To avoid rewarding translations that are too short, BLEU applies a brevity penalty:
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{BP}=%20\begin{cases}1,%20&%20\text{if }%20c>r%20\\%20e^{(1-r/c)},%20&%20\text{if }%20c\leq%20r\end{cases}" alt="BP"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{BP}=%20\begin{cases}1,%20&%20\text{if}%20c>r%20\\%20e^{(1-r/c)},%20&%20\text{if}%20c\leq%20r\end{cases}" alt="BP"/>
 </p>
 
 
@@ -535,7 +535,7 @@ The overall BLEU score combines the modified n-gram precisions with the brevity 
 </p>
 
 
- Usually, N=4 and weights ![w_n = \frac{1}{4}](https://latex.codecogs.com/svg.image?w_n = \frac{1}{4}).
+ Usually, N=4 and weights ![w_n = 1/4](https://latex.codecogs.com/svg.image?\Large%20w_n=%20\frac{1}{4}).
  This formula represents the geometric mean of the modified n-gram precisions multiplied by the brevity penalty.
 
 ### 2.3.2 CIDEr(Consensus-based Image Description Evaluation)[[Paper](https://openaccess.thecvf.com/content_cvpr_2015/papers/Vedantam_CIDEr_Consensus-Based_Image_2015_CVPR_paper.pdf)]
@@ -689,6 +689,7 @@ Here, V is a subset of video frames selected by thresholding the importance curv
 </p>
 
 Frames with importance scores  I(t) \geq \tau  are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
