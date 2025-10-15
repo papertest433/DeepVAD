@@ -394,14 +394,14 @@ AUC refers to the area under the Receiver Operating Characteristic (ROC) Curve. 
 
 
 <p align = "justify"> 
-Where: TP(True Positives) is the number of actual positive instances, i.e., the count of samples correctly predicted as positive.TN(True Negatives) is the number of actual negative instances, i.e., the count of samples correctly predicted as negative.FP(False Positives) is the number of false positive instances, i.e., the count of samples incorrectly predicted as positive.FN(False Negatives) is the number of false negative instances, i.e., the count of samples incorrectly predicted as negative.
+Where TP(True Positives) is the number of actual positive instances, i.e., the count of samples correctly predicted as positive. TN(True Negatives) is the number of actual negative instances, i.e., the count of samples correctly predicted as negative. FP(False Positives) is the number of false positive instances, i.e., the count of samples incorrectly predicted as positive. FN(False Negatives) is the number of false negative instances, i.e., the count of samples incorrectly predicted as negative.
 </p>
 
 <p align = "justify"> 
 AUC is used to measure the overall performance of a classifier, especially useful when dealing with class imbalance. It provides a more robust measure of performance than accuracy alone. The value of AUC ranges from 0 to 1, with higher values indicating better model performance.
 </p>
 <p align = "justify"> 
-Frame-level AUC pays special attention to the detection of the video frame level, that is, the classification accuracy of the model on whether each frame in the video contains abnormal events.
+Frame-level AUC pays special attention to the detection of the video frame level, that is the classification accuracy of the model on whether each frame in the video contains abnormal events.
 </p>
 <p align = "justify"> 
 Pixel-level AUC is a more refined evaluation metric that evaluates the performance of the model at the pixel level. This means that the model should not only detect abnormal frames, but also be able to locate specific areas in the frame where the abnormality occurs. This evaluation method puts higher requirements on the spatial positioning ability of the model.
@@ -414,17 +414,17 @@ AP stands for the area under the Precision-Recall Curve. Precision is the propor
 </p>
 
 <p align = "justify"> 
-mAP is the mean of the Average Precision scores across different classes. In multi-class classification tasks, each class has its own Precision-Recall Curve, and mAP calculates the average of the AP for each class, providing an overall performance measure of the model across all classes.mAP is a widely used metric for multi-class detection tasks, especially in object detection. It provides a comprehensive measure of the model's ability to identify and localize objects across different categories.
+mAP is the mean of the Average Precision scores across different classes. In multi-class classification tasks, each class has its own Precision-Recall Curve, and mAP calculates the average of the AP for each class, providing an overall performance measure of the model across all classes. mAP is a widely used metric for multi-class detection tasks, especially in object detection. It provides a comprehensive measure of the model's ability to identify and localize objects across different categories.
 </p>
 
 ### 2.1.3 EER (Equal Error Rate) and EDR (Equal Detected Rate)[[Paper](https://www.cv-foundation.org/openaccess/content_iccv_2013/papers/Lu_Abnormal_Event_Detection_2013_ICCV_paper.pdf)]
 
 <p align = "justify"> 
-EER refers to the error rate where the false positive rate (FPR) and the false negative rate (FNR) are equal on the Receiver Operating Characteristic (ROC) curve.At this point, the detection system has an equal number of true positives (TP) and false negatives (FN), meaning the number of correctly detected anomalies is the same as the number of missed anomalies.EER is a crucial performance measure because it provides a balance point where the sensitivity and specificity of the detection system are equally weighted.
+EER refers to the error rate where the false positive rate (FPR) and the false negative rate (FNR) are equal on the Receiver Operating Characteristic (ROC) curve. At this point, the detection system has an equal number of true positives (TP) and false negatives (FN), meaning the number of correctly detected anomalies is the same as the number of missed anomalies. EER is a crucial performance measure because it provides a balance point where the sensitivity and specificity of the detection system are equally weighted.
 </p>
 
 <p align = "justify"> 
-EDR typically refers to the proportion of total anomalies that are detected by the system at a specific detection threshold.This metric focuses on the recall of the detection system, which is the ratio of the number of correctly detected anomalies to the total number of actual anomalies.
+EDR typically refers to the proportion of total anomalies that are detected by the system at a specific detection threshold. This metric focuses on the recall of the detection system, which is the ratio of the number of correctly detected anomalies to the total number of actual anomalies.
 </p>
 
 <p align = "justify"> 
@@ -434,7 +434,7 @@ EER provides a point of balance, while EDR emphasizes the completeness of detect
 ### 2.1.4 Accuracy[[Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6239234)]
 
 <p align = "justify"> 
-Accuracy is a performance measurement for classification models or diagnostic tests that reflects the ratio of the number of correct predictions to the total number of predictions. It is one of the most intuitive performance metrics, especially in binary or multi-class classification problems.Accuracy is typically calculated using the following formula:  
+Accuracy is a performance measurement for classification models or diagnostic tests that reflects the ratio of the number of correct predictions to the total number of predictions. It is one of the most intuitive performance metrics, especially in binary or multi-class classification problems. Accuracy is typically calculated using the following formula:  
 </p>
 
 <p align="center">
@@ -442,13 +442,13 @@ Accuracy is a performance measurement for classification models or diagnostic te
 </p>
 
 <p align = "justify"> 
-Where: TP(True Positives) is the number of actual positive instances, i.e., the count of samples correctly predicted as positive.TN(True Negatives) is the number of actual negative instances, i.e., the count of samples correctly predicted as negative.FP(False Positives) is the number of false positive instances, i.e., the count of samples incorrectly predicted as positive.FN(False Negatives) is the number of false negative instances, i.e., the count of samples incorrectly predicted as negative.
+Where TP(True Positives) is the number of actual positive instances, i.e., the count of samples correctly predicted as positive. TN(True Negatives) is the number of actual negative instances, i.e., the count of samples correctly predicted as negative.FP(False Positives) is the number of false positive instances, i.e., the count of samples incorrectly predicted as positive. FN(False Negatives) is the number of false negative instances, i.e., the count of samples incorrectly predicted as negative.
 </p>
 <p align = "justify"> 
-Accuracy provides a straightforward metric to assess the overall performance of a model, indicating the probability that the model makes correct predictions.Accuracy is easy to understand and calculate, offering a quick overview of model performance.But in cases of class imbalance, accuracy can be misleading. For instance, if the majority of samples belong to one class, a model might achieve high accuracy by simply predicting that class for all samples, even if it is inaccurate for the minority class.
+Accuracy provides a straightforward metric to assess the overall performance of a model, indicating the probability that the model makes correct predictions. Accuracy is easy to understand and calculate, offering a quick overview of model performance. But in cases of class imbalance, accuracy can be misleading. For instance, if the majority of samples belong to one class, a model might achieve high accuracy by simply predicting that class for all samples, even if it is inaccurate for the minority class.
 </p>
 <p align = "justify"> 
-Accuracy is often used for a quick assessment of model performance but is usually complemented by other metrics such as precision, recall, and the F1 score to fully evaluate model performance, especially with imbalanced datasets.When using accuracy as an evaluation metric, it is important to consider the distribution of the dataset. If the dataset has an uneven distribution of positive and negative samples, other metrics may need to be used in conjunction with accuracy to provide a more comprehensive assessment of the model's performance.
+Accuracy is often used for a quick assessment of model performance but is usually complemented by other metrics such as precision, recall, and the F1 score to fully evaluate model performance, especially with imbalanced datasets. When using accuracy as an evaluation metric, it is important to consider the distribution of the dataset. If the dataset has an uneven distribution of positive and negative samples, other metrics may need to be used in conjunction with accuracy to provide a more comprehensive assessment of the model's performance.
 </p>
 
 ## 2.2 pixel-level metrics
@@ -456,7 +456,7 @@ Accuracy is often used for a quick assessment of model performance but is usuall
 ### 2.2.1 TIoU(Temporal Intersection over Union)[[Paper](https://dl.acm.org/doi/pdf/10.1145/3343031.3350998)]
 
 <p align = "justify"> 
-TIoU is a video anomaly detection-specific metric that combines the temporal anomaly detection score with the model's ability to spatially locate the learned pattern of anomalies.TIoU evaluates the model's spatial localization accuracy by calculating the intersection over union (IoU) between the model's predicted anomaly region and the manually annotated region. This metric not only considers the model's ability to detect anomalies over time but also assesses the spatial accuracy of the model's anomaly localization.
+TIoU is a video anomaly detection-specific metric that combines the temporal anomaly detection score with the model's ability to spatially locate the learned pattern of anomalies. TIoU evaluates the model's spatial localization accuracy by calculating the intersection over union (IoU) between the model's predicted anomaly region and the manually annotated region. This metric not only considers the model's ability to detect anomalies over time but also assesses the spatial accuracy of the model's anomaly localization.
 </p>
 
 <p align="center">
@@ -464,9 +464,21 @@ TIoU is a video anomaly detection-specific metric that combines the temporal ano
 </p>
 
 
-<p align = "justify"> 
-where the indicator II[.] ∈ {0,1} indicates whether the given 𝑗𝑡ℎ anomaly clip are predicted as anomaly according to the probability score 𝑃𝑗, 𝐴𝑟𝑒𝑎_𝑝represents the area of predicted anomalous region, 𝐴𝑟𝑒𝑎𝑔 is the area of annotated region, and 𝑀 is the number of clips that anomaly occurs.
+<p align="justify">
+where the indicator 
+<img src="https://latex.codecogs.com/svg.image?\inline%20\mathbb{I}[\cdot]%20\in%20\{0,1\}" alt="indicator"/> 
+indicates whether the given 
+<img src="https://latex.codecogs.com/svg.image?\inline%20j^{th}" alt="jth"/> 
+anomaly clip are predicted as anomaly according to the probability score 
+<img src="https://latex.codecogs.com/svg.image?\inline%20P_j" alt="Pj"/>, 
+<img src="https://latex.codecogs.com/svg.image?\inline%20\text{Area}_p" alt="Areap"/> 
+represents the area of predicted anomalous region, 
+<img src="https://latex.codecogs.com/svg.image?\inline%20\text{Area}_g" alt="Areag"/> 
+is the area of annotated region, and 
+<img src="https://latex.codecogs.com/svg.image?\inline%20M" alt="M"/> 
+is the number of clips that anomaly occurs.
 </p>
+
 
 ### 2.2.2 RBDR (Region-based Detection Rate) and TBDR (Track-based Detection Rate)[[Paper](https://openaccess.thecvf.com/content_WACV_2020/papers/Ramachandra_Street_Scene_A_new_dataset_and_evaluation_protocol_for_video_WACV_2020_paper.pdf)]
 
@@ -690,6 +702,7 @@ Here, V is a subset of video frames selected by thresholding the importance curv
 </p>
 
 Frames with importance scores  I(t) \geq \tau  are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
