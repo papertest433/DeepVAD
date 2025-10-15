@@ -475,7 +475,7 @@ The RBDR evaluates the model's ability to accurately localize the spatial extent
 </p>
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\Large%20RBDR=%20\frac{\text{num. of anomalous regions detected}}{\text{total num. of anomalous regions}}" alt="RBDR"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20RBDR=%20\frac{\text{num.%20of%20anomalous%20regions%20detected}}{\text{total%20num.%20of%20anomalous%20regions}}" alt="RBDR"/>
 </p>
 
 
@@ -689,6 +689,7 @@ Here, V is a subset of video frames selected by thresholding the importance curv
 </p>
 
 Frames with importance scores  I(t) \geq \tau  are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
