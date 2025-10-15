@@ -31,13 +31,22 @@
     - [1.5.2 VAD-Instruct50k (arXiv 2024)](#152-vad-instruct50kholmes-vad-towards-unbiased-and-explainable-video-anomaly-detection-via-multi-modal-llm)  
     - [1.5.3 & 1.5.4 UCFCrimeAR & XDViolenceAR (TIP 2024)](#ucfcrimear-xdviolencear)  
     - [1.5.5 UCCD (TMM 2024)](#155-uccdhuman-centric-behavior-description-in-videos-new-benchmark-and-modeltmm-2024)  
-- [2. Performance Evaluation](#2-performance-evaluation)  
-  - [2.1 AUC](#21-auc-areaunder-the-curvepapersframe-level-aucpixel-level-auc)  
-  - [2.2 AP / mAP](#22-ap-average-precisionpapermap)  
-  - [2.3 RBDC / TBDC](#23-rbdc-region-based-detection-criterion-and-tbdc-track-based-detection-criterionpaper)  
-  - [2.4 EER / EDR](#24-eer-equal-error-rate-and-edr-equal-detected-ratepaper)  
-  - [2.5 Accuracy](#25-accuracypaper)  
-  - [2.6 TIoU](#26tioutemporal-intersection-over-unionpaper)  
+- [2. Performance Evaluation](#2-performance-evaluation)
+  - [2.1 Frame-level Metrics](#21-frame-level-metrics)
+    - [2.1.1 AUC (Area Under the Curve)](#211-auc-area-under-the-curve)
+    - [2.1.2 AP (Average Precision)](#212-ap-average-precision)
+    - [2.1.3 EER (Equal Error Rate) and EDR (Equal Detected Rate)](#213-eer-equal-error-rate-and-edr-equal-detected-rate)
+    - [2.1.4 Accuracy](#214-accuracy)
+  - [2.2 Pixel-level Metrics](#22-pixel-level-metrics)
+    - [2.2.1 TIoU (Temporal Intersection over Union)](#221-tiou-temporal-intersection-over-union)
+    - [2.2.2 RBDR (Region-based Detection Rate) and TBDR (Track-based Detection Rate)](#222-rbdr-region-based-detection-rate-and-tbdr-track-based-detection-rate)
+  - [2.3 Sentence-level and Reasoning-based Metrics](#23-sentence-level-and-reasoning-based-metrics)
+    - [2.3.1 BLEU (Bilingual Evaluation Understudy)](#231-bleu-bilingual-evaluation-understudy)
+    - [2.3.2 CIDEr (Consensus-based Image Description Evaluation)](#232-cider-consensus-based-image-description-evaluation)
+    - [2.3.3 METEOR (Metric for Evaluation of Translation with Explicit ORdering)](#233-meteor-metric-for-evaluation-of-translation-with-explicit-ordering)
+    - [2.3.4 ROUGE (Recall-Oriented Understudy for Gisting Evaluation)](#234-rouge-recall-oriented-understudy-for-gisting-evaluation)
+    - [2.3.5 MMEval](#235-mmeval)
+
 
     
 #  Dataset Information
@@ -706,6 +715,7 @@ Here, ![V](https://latex.codecogs.com/svg.image?\inline%20V) is a subset of vide
 </p>
 
 Frames with importance scores ![I(t)≥τ](https://latex.codecogs.com/svg.image?\inline%20I(t)%20\geq%20\tau) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
