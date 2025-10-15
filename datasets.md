@@ -574,7 +574,8 @@ CIDEr is a metric specifically designed for image captioning tasks. It measures 
   <img src="https://latex.codecogs.com/svg.image?\Large%20\text{CIDEr}(c_i,%20S_i)=%20\sum_{n=1}^{N}%20w_n%20\cdot%20\text{CIDEr}_n(c_i,%20S_i)" alt="CIDEr"/>
 </p>
 
- Typically N=4 withuniformweightsN=4 with uniform weights ![w_n = \frac{1}{4}](https://latex.codecogs.com/svg.image?w_n = \frac{1}{4}) 
+ Typically N=4 with uniform weights ![w_n = 1/4](https://latex.codecogs.com/svg.image?\inline%20w_n=%20\frac{1}{4})
+ 
 
 ### 2.3.3 METEOR(Metric for Evaluation of Translation with Explicit ORdering)[[Paper](https://aclanthology.org/W05-0909.pdf)]
 ### METEOR: An Automatic Metric for MT Evaluation
@@ -689,6 +690,7 @@ Here, V is a subset of video frames selected by thresholding the importance curv
 </p>
 
 Frames with importance scores  I(t) \geq \tau  are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
