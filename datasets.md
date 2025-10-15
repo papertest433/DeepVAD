@@ -539,7 +539,7 @@ For n-grams of order n, the modified precision is calculated as:
 To avoid rewarding translations that are too short, BLEU applies a brevity penalty:
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{BP}=%20\begin{cases}1,%20&%20\text{if}%20c>r%20\\%20e^{(1-r/c)},%20&%20\text{if}%20c\leq%20r\end{cases}" alt="BP"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{BP}=%20\begin{cases}1,%20&%20\text{if}\;%20c>r%20\\%20e^{(1-r/c)},%20&%20\text{if}\;%20c\leq%20r\end{cases}" alt="BP"/>
 </p>
 
 
@@ -715,6 +715,7 @@ Here, ![V](https://latex.codecogs.com/svg.image?\inline%20V) is a subset of vide
 </p>
 
 Frames with importance scores ![I(t)≥τ](https://latex.codecogs.com/svg.image?\inline%20I(t)%20\geq%20\tau) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
