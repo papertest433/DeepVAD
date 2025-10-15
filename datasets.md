@@ -547,7 +547,7 @@ The overall BLEU score combines the modified n-gram precisions with the brevity 
 </p>
 
 
- Usually, ![N=4](https://latex.codecogs.com/svg.image?\inline%20N=4) and weights ![w_n = 1/4](https://latex.codecogs.com/svg.image?\Large%20w_n=%20\frac{1}{4}).
+ Usually, ![N=4](https://latex.codecogs.com/svg.image?\inline%20N=4) and weights ![w_n = 1/4](https://latex.codecogs.com/svg.image?\inline%20w_n=%20\frac{1}{4}).
  This formula represents the geometric mean of the modified n-gram precisions multiplied by the brevity penalty.
 
 ### 2.3.2 CIDEr(Consensus-based Image Description Evaluation)[[Paper](https://openaccess.thecvf.com/content_cvpr_2015/papers/Vedantam_CIDEr_Consensus-Based_Image_2015_CVPR_paper.pdf)]
@@ -663,9 +663,10 @@ ROUGE is a family of automatic metrics used to evaluate the quality of a **candi
 For multiple reference summaries ![{r1, r2, ..., rM}](https://latex.codecogs.com/svg.image?\inline%20\{r_1,%20r_2,%20...,%20r_M\}), compute ROUGE scores between the candidate ![c](https://latex.codecogs.com/svg.image?\inline%20c) and each reference, then take the maximum:
 
 
-$$
-\text{ROUGE-N}_{\text{multi}} = \max_{i=1..M} \text{ROUGE-N}(r_i, c)
-$$
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{ROUGE-N}_{\text{multi}}=%20\max_{i=1..M}%20\text{ROUGE-N}(r_i,%20c)" alt="ROUGE-N_multi"/>
+</p>
+
 
 Official implementations use jackknifing: averaging max scores over leave-one-out reference sets to stabilize comparisons.
 
@@ -705,6 +706,7 @@ Here, ![V](https://latex.codecogs.com/svg.image?\inline%20V) is a subset of vide
 </p>
 
 Frames with importance scores ![I(t)≥τ](https://latex.codecogs.com/svg.image?\inline%20I(t)%20\geq%20\tau) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
