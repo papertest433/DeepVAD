@@ -657,11 +657,12 @@ ROUGE is a family of automatic metrics used to evaluate the quality of a **candi
 
 | Variant | Unit Measured | Intuition | Formula (Single Reference) |
 |----------|---------------|------------|-----------------------------|
-| **ROUGE-N** | n-gram | n-gram recall vs. reference | ![ROUGE-N](https://latex.codecogs.com/svg.image?\Large%20\text{ROUGE-N}=%20\frac{\sum_{S%20\in%20\{\text{ref}\}}%20\sum_{\text{gram}_n}%20\text{Count}_{\text{match}}(\text{gram}_n)}{\sum_{S%20\in%20\{\text{ref}\}}%20\sum_{\text{gram}_n}%20\text{Count}(\text{gram}_n)}) |
-| **ROUGE-L** | Longest Common Subsequence (LCS) | Sentence-level in-order word overlap | ![ROUGE-L](https://latex.codecogs.com/svg.image?\Large%20\text{ROUGE-L}=F_{\text{lcs}}=%20\frac{(1+\beta^2)R_{\text{lcs}}P_{\text{lcs}}}{R_{\text{lcs}}+\beta^2P_{\text{lcs}}},%20\quad%20\text{where}%20R_{\text{lcs}}=%20\frac{\text{LCS}(X,Y)}{m},%20P_{\text{lcs}}=%20\frac{\text{LCS}(X,Y)}{n}) |
-| **ROUGE-W** | Weighted LCS | Rewards **consecutive** matches | ![ROUGE-W](https://latex.codecogs.com/svg.image?\Large%20\text{ROUGE-W}=F_{\text{wlcs}},%20\text{with%20weighted%20score}%20\text{WLCS}(X,Y)%20\text{using}%20f(k)=k^2) |
-| **ROUGE-S** | Skip-bigram | Any ordered word-pair (within skip-gap) | ![ROUGE-S](https://latex.codecogs.com/svg.image?\Large%20\text{ROUGE-S}=F_{\text{skip2}}=%20\frac{(1+\beta^2)R_{\text{skip2}}P_{\text{skip2}}}{R_{\text{skip2}}+\beta^2P_{\text{skip2}}}) |
+| **ROUGE-N** | n-gram | n-gram recall vs. reference | ![ROUGE-N](https://latex.codecogs.com/svg.image?\text{ROUGE-N}=%20\frac{\sum_{S%20\in%20\{\text{ref}\}}%20\sum_{\text{gram}_n}%20\text{Count}_{\text{match}}(\text{gram}_n)}{\sum_{S%20\in%20\{\text{ref}\}}%20\sum_{\text{gram}_n}%20\text{Count}(\text{gram}_n)}) |
+| **ROUGE-L** | Longest Common Subsequence (LCS) | Sentence-level in-order word overlap | ![ROUGE-L](https://latex.codecogs.com/svg.image?\text{ROUGE-L}=F_{\text{lcs}}=%20\frac{(1+\beta^2)R_{\text{lcs}}P_{\text{lcs}}}{R_{\text{lcs}}+\beta^2P_{\text{lcs}}},%20\quad%20\text{where}%20R_{\text{lcs}}=%20\frac{\text{LCS}(X,Y)}{m},%20P_{\text{lcs}}=%20\frac{\text{LCS}(X,Y)}{n}) |
+| **ROUGE-W** | Weighted LCS | Rewards **consecutive** matches | ![ROUGE-W](https://latex.codecogs.com/svg.image?\text{ROUGE-W}=F_{\text{wlcs}},%20\text{with%20weighted%20score}%20\text{WLCS}(X,Y)%20\text{using}%20f(k)=k^2) |
+| **ROUGE-S** | Skip-bigram | Any ordered word-pair (within skip-gap) | ![ROUGE-S](https://latex.codecogs.com/svg.image?\text{ROUGE-S}=F_{\text{skip2}}=%20\frac{(1+\beta^2)R_{\text{skip2}}P_{\text{skip2}}}{R_{\text{skip2}}+\beta^2P_{\text{skip2}}}) |
 | **ROUGE-SU** | Skip-bigram + unigram | Adds unigram to handle zero-match cases | Same as ROUGE-S but numerator and denominator include unigram hits |
+
 
 
 > In DUC evaluations, ![beta→∞](https://latex.codecogs.com/svg.image?\inline%20\beta%20\to%20\infty) is used, so only **recall** is reported for simplicity.
@@ -715,6 +716,7 @@ Here, ![V](https://latex.codecogs.com/svg.image?\inline%20V) is a subset of vide
 </p>
 
 Frames with importance scores ![I(t)≥τ](https://latex.codecogs.com/svg.image?\inline%20I(t)%20\geq%20\tau) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
 
 
 
