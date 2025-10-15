@@ -483,7 +483,7 @@ is the number of clips that anomaly occurs.
 ### 2.2.2 RBDR (Region-based Detection Rate) and TBDR (Track-based Detection Rate)[[Paper](https://openaccess.thecvf.com/content_WACV_2020/papers/Ramachandra_Street_Scene_A_new_dataset_and_evaluation_protocol_for_video_WACV_2020_paper.pdf)]
 
 <p align = "justify"> 
-The RBDR evaluates the model's ability to accurately localize the spatial extent of anomalies within video frames. It is particularly useful for assessing how well a model can identify the regions where anomalies occur.This metric compares the detected anomaly regions with the ground truth annotations to compute a score. The comparison is often done using the Intersection over Union (IoU), which measures the overlap between the predicted region and the actual region of the anomaly.A higher RBDR score indicates better spatial localization performance, meaning the model is more accurate in identifying the correct area of the video frame where the anomaly happens.
+The RBDR evaluates the model's ability to accurately localize the spatial extent of anomalies within video frames. It is particularly useful for assessing how well a model can identify the regions where anomalies occur. This metric compares the detected anomaly regions with the ground truth annotations to compute a score. The comparison is often done using the Intersection over Union (IoU), which measures the overlap between the predicted region and the actual region of the anomaly. A higher RBDR score indicates better spatial localization performance, meaning the model is more accurate in identifying the correct area of the video frame where the anomaly happens.
 </p>
 
 <p align="center">
@@ -517,7 +517,7 @@ BLEU is a metric for evaluating the quality of machine translation. It measures 
 </p>
 
 #### a. Modified n-gram Precision
-For n-grams of order \(n\), the modified precision is calculated as:
+For n-grams of order n, the modified precision is calculated as:
 
 <p align="center">
   <img src="https://latex.codecogs.com/svg.image?\Large%20p_n=%20\frac{\sum_{C%20\in%20\text{Candidates}}%20\sum_{n\text{-gram}%20\in%20C}%20\text{Count}_{\text{clip}}(n\text{-gram})}{\sum_{C'%20\in%20\text{Candidates}}%20\sum_{n\text{-gram}%20\in%20C'}%20\text{Count}(n\text{-gram})}" alt="p_n公式"/>
@@ -534,8 +534,8 @@ To avoid rewarding translations that are too short, BLEU applies a brevity penal
 </p>
 
 
- c is the total length of the candidate translations.
- r is the effective reference corpus length (best matching length).
+ ![c](https://latex.codecogs.com/svg.image?\inline%20c) is the total length of the candidate translations.
+ ![r](https://latex.codecogs.com/svg.image?\inline%20r) is the effective reference corpus length (best matching length).
 
 #### c. Final BLEU Score
 
@@ -547,7 +547,7 @@ The overall BLEU score combines the modified n-gram precisions with the brevity 
 </p>
 
 
- Usually, N=4 and weights ![w_n = 1/4](https://latex.codecogs.com/svg.image?\Large%20w_n=%20\frac{1}{4}).
+ Usually, ![N=4](https://latex.codecogs.com/svg.image?\inline%20N=4) and weights ![w_n = 1/4](https://latex.codecogs.com/svg.image?\Large%20w_n=%20\frac{1}{4}).
  This formula represents the geometric mean of the modified n-gram precisions multiplied by the brevity penalty.
 
 ### 2.3.2 CIDEr(Consensus-based Image Description Evaluation)[[Paper](https://openaccess.thecvf.com/content_cvpr_2015/papers/Vedantam_CIDEr_Consensus-Based_Image_2015_CVPR_paper.pdf)]
@@ -562,19 +562,19 @@ CIDEr is a metric specifically designed for image captioning tasks. It measures 
 </p>
 
 
- ![h_k(s_{ij})](https://latex.codecogs.com/svg.image?h_k(s_{ij})): frequency of n-gram \omega_k in sentence s_{ij} (Term Frequency)
- |I|: total number of images
- Denominator: number of images containing n-gram \omega_k (Inverse Document Frequency)
+![h_k(s_{ij})](https://latex.codecogs.com/svg.image?\inline%20h_k(s_{ij})): frequency of n-gram ![\omega_k](https://latex.codecogs.com/svg.image?\inline%20\omega_k) in sentence ![s_{ij}](https://latex.codecogs.com/svg.image?\inline%20s_{ij}) (Term Frequency)  
+![|I|](https://latex.codecogs.com/svg.image?\inline%20|I|): total number of images  
+Denominator: number of images containing n-gram ![\omega_k](https://latex.codecogs.com/svg.image?\inline%20\omega_k) (Inverse Document Frequency)
 
 
 
 #### b. CIDEr Score for n-grams of length 
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{CIDEr}_n(c_i,%20S_i)=%20\frac{1}{m}%20\sum_{j=1}^{m}%20\frac{\mathbf{g}_n(c_i)\cdot\mathbf{g}_n(s_{ij})}{\|\mathbf{g}_n(c_i)\|\cdot\|\mathbf{g}_n(s_{ij})\|}" alt="CIDEr公式"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{CIDEr}_n(c_i,%20S_i)=%20\frac{1}{m}%20\sum_{j=1}^{m}%20\frac{\mathbf{g}_n(c_i)\cdot\mathbf{g}_n(s_{ij})}{\|\mathbf{g}_n(c_i)\|\cdot\|\mathbf{g}_n(s_{ij})\|}" alt="CIDEr"/>
 </p>
 
- c_i: candidate caption
+ ![c_i](https://latex.codecogs.com/svg.image?\inline%20c_i): candidate caption
  ![S_i](https://latex.codecogs.com/svg.image?\inline%20S_i%20=%20\{s_{i1},%20...,%20s_{im}\}): set of reference captions
  Computes the average cosine similarity between the TF-IDF vectors of the candidate and each reference caption
 
@@ -586,7 +586,7 @@ CIDEr is a metric specifically designed for image captioning tasks. It measures 
   <img src="https://latex.codecogs.com/svg.image?\Large%20\text{CIDEr}(c_i,%20S_i)=%20\sum_{n=1}^{N}%20w_n%20\cdot%20\text{CIDEr}_n(c_i,%20S_i)" alt="CIDEr"/>
 </p>
 
- Typically N=4 with uniform weights ![w_n = 1/4](https://latex.codecogs.com/svg.image?\inline%20w_n=%20\frac{1}{4})
+ Typically ![N=4](https://latex.codecogs.com/svg.image?\inline%20N=4) with uniform weights ![w_n = 1/4](https://latex.codecogs.com/svg.image?\inline%20w_n=%20\frac{1}{4})
  
 
 ### 2.3.3 METEOR(Metric for Evaluation of Translation with Explicit ORdering)[[Paper](https://aclanthology.org/W05-0909.pdf)]
@@ -601,9 +601,9 @@ System and reference translations are aligned in stages: Exact match; Stemmed ma
 #### b. Precision & Recall Calculation
 
 Let:
- m : number of mapped unigrams
- t : total unigrams in system translation
- r : total unigrams in reference translation
+ ![m](https://latex.codecogs.com/svg.image?\inline%20m) : number of mapped unigrams
+ ![t](https://latex.codecogs.com/svg.image?\inline%20t) : total unigrams in system translation
+ ![r](https://latex.codecogs.com/svg.image?\inline%20r) : total unigrams in reference translation
 
 <p align="center">
   <img src="https://latex.codecogs.com/svg.image?\Large%20P=%20\frac{m}{t},%20\quad%20R=%20\frac{m}{r}" alt="Precision and Recall"/>
@@ -635,7 +635,7 @@ Let:
 #### e. Final METEOR Score
 
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{METEOR%20Score}=%20\text{Fmean}%20\times%20(1-%20\text{Penalty})" alt="METEOR公式"/>
+  <img src="https://latex.codecogs.com/svg.image?\Large%20\text{METEOR%20Score}=%20\text{Fmean}%20\times%20(1-%20\text{Penalty})" alt="METEOR"/>
 </p>
 
 
@@ -655,11 +655,13 @@ ROUGE is a family of automatic metrics used to evaluate the quality of a **candi
 | **ROUGE-SU** | Skip-bigram + unigram | Adds unigram to handle zero-match cases | Same as ROUGE-S but numerator and denominator include unigram hits |
 
 
-> In DUC evaluations, $`\beta \to \infty`$ is used, so only **recall** is reported for simplicity.
+> In DUC evaluations, ![beta→∞](https://latex.codecogs.com/svg.image?\inline%20\beta%20\to%20\infty) is used, so only **recall** is reported for simplicity.
+
 
 #### Multi-Reference Handling
 
-For multiple reference summaries  $` {r_1, r_2, ..., r_M} `$ , compute ROUGE scores between the candidate c and each reference, then take the maximum:
+For multiple reference summaries ![{r1, r2, ..., rM}](https://latex.codecogs.com/svg.image?\inline%20\{r_1,%20r_2,%20...,%20r_M\}), compute ROUGE scores between the candidate ![c](https://latex.codecogs.com/svg.image?\inline%20c) and each reference, then take the maximum:
+
 
 $$
 \text{ROUGE-N}_{\text{multi}} = \max_{i=1..M} \text{ROUGE-N}(r_i, c)
@@ -669,20 +671,21 @@ Official implementations use jackknifing: averaging max scores over leave-one-ou
 
 #### Key Properties
 
-| Variant   | Requires Consecutive Matches? | Captures Word Order? | Sensitive to Sentence Structure? |
-|-----------|-------------------------------|---------------------|----------------------------------|
-| ROUGE-N   | Yes (for \(n \geq 2\))        | Partial             | Low                              |
-| ROUGE-L   | No (in-sequence only)          | Yes                 | High                             |
-| ROUGE-W   | No (but boosts consecutive)   | Yes                 | High                             |
-| ROUGE-S   | No                            | Yes (via skip-bigrams) | Medium                           |
-| ROUGE-SU  | No                            | Yes (+ unigram)      | Medium                           |
+| Variant  | Requires Consecutive Matches? | Captures Word Order? | Sensitive to Sentence Structure? |
+|-----------|-------------------------------|----------------------|----------------------------------|
+| **ROUGE-N** | Yes (for ![n≥2](https://latex.codecogs.com/svg.image?\inline%20n%20\ge%202)) | Partial | Low |
+| **ROUGE-L** | No (in-sequence only) | Yes | High |
+| **ROUGE-W** | No (but boosts consecutive) | Yes | High |
+| **ROUGE-S** | No | Yes (via skip-bigrams) | Medium |
+| **ROUGE-SU** | No | Yes (+ unigram) | Medium |
+
 
 
 ### 2.3.5 MMEval()[[Paper](https://openaccess.thecvf.com/content/CVPR2024/papers/Du_Uncovering_What_Why_and_How_A_Comprehensive_Benchmark_for_Causation_CVPR_2024_paper.pdf)]
 
 Traditional Natural Language Generation (NLG) metrics like BLEU and ROUGE are text-only and fail to consider the visual evidence essential in video-text tasks. Causation Understanding of Video Anomaly requires evaluating free-text explanations for **cause** and **effect** grounded in video content. To address this, **MMEval** is proposed as a **multimodal** evaluation metric that leverages both video and text to align closely with human judgment. It works by constructing task-specific natural language prompts, selecting key video frames based on an importance curve that highlights anomalous segments, and feeding these frames along with the prompt and candidate answer into a frozen Video-ChatGPT model. The model outputs a scalar score (0–100) and a short rationale, enabling transparent and explainable evaluation. MMEval is task-agnostic (using the same model with different prompts) and achieves high human consistency with Spearman correlation between 0.82 and 0.89. The approach reduces noise and computation by densely sampling only the most relevant frames according to a threshold set on the importance curve.
 
-Given a video clip V, a task-specific prompt $` P_{\text{task}} `$ (for Description, Cause, or Effect), and a candidate free-text answer A, MMEval uses a frozen Video-ChatGPT model \Phi(\cdot) to compute a scalar score and ranking:
+Given a video clip ![V](https://latex.codecogs.com/svg.image?\inline%20V), a task-specific prompt ![P_task](https://latex.codecogs.com/svg.image?\inline%20P_{\text{task}}) (for Description, Cause, or Effect), and a candidate free-text answer ![A](https://latex.codecogs.com/svg.image?\inline%20A), MMEval uses a frozen Video-ChatGPT model ![\Phi(\cdot)](https://latex.codecogs.com/svg.image?\inline%20\Phi(\cdot)) to compute a scalar score and ranking:
 
 
 <p align="center">
@@ -695,13 +698,15 @@ Given a video clip V, a task-specific prompt $` P_{\text{task}} `$ (for Descript
 </p>
 
 
-Here, V is a subset of video frames selected by thresholding the importance curve I(t) (which measures anomaly relevance over time):
+Here, ![V](https://latex.codecogs.com/svg.image?\inline%20V) is a subset of video frames selected by thresholding the importance curve ![I(t)](https://latex.codecogs.com/svg.image?\inline%20I(t)) (which measures anomaly relevance over time):
 
 <p align="center">
   <img src="https://latex.codecogs.com/svg.image?\Large%20\tau=%20\mu+%20\sigma" alt="tau公式"/>
 </p>
 
-Frames with importance scores  I(t) \geq \tau  are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+Frames with importance scores ![I(t)≥τ](https://latex.codecogs.com/svg.image?\inline%20I(t)%20\geq%20\tau) are densely sampled (at 10 fps) to focus the evaluation on key segments, reducing noise and computational cost.
+
+
 
 
 
